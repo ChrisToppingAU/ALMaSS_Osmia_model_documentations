@@ -35,5 +35,5 @@ var searchData=
   ['3_20temporal_20scale_20limitations_32',['8.2.3 Temporal Scale Limitations',['../index.html#autotoc_md92',1,'']]],
   ['3_20three_20paper_20publication_20sequence_33',['1.3 Three-Paper Publication Sequence',['../index.html#autotoc_md6',1,'']]],
   ['3_20weather_20data_34',['6.1.3 Weather Data',['../index.html#autotoc_md59',1,'']]],
-  ['3_3a_20individual_20step_20main_20agent_20actions_35',['Phase 3: Individual Step() - Main Agent Actions',['../index.html#autotoc_md26',1,'']]]
+  ['3_3a_20individual_20step_20step_20main_20agent_20actions_35',['Phase 3: Individual Step() - Main Agent Actions',['../index.html#autotoc_md26',1,'']]]
 ];

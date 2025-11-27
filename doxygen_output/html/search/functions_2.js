@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['calcparasitised_0',['CalcParasitised',['../classOsmia__Female.html#a269b5fbc57f1616368013942cd9ee577',1,'Osmia_Female::CalcParasitised(double a_daysopen)'],['../classOsmia__Female.html#a269b5fbc57f1616368013942cd9ee577',1,'Osmia_Female::CalcParasitised(double a_daysopen)']]],
-  ['calculateeggload_1',['CalculateEggLoad',['../classOsmia__Female.html#a57d49547e2a2fd54ae90caacad2df17a',1,'Osmia_Female::CalculateEggLoad()'],['../classOsmia__Female.html#a57d49547e2a2fd54ae90caacad2df17a',1,'Osmia_Female::CalculateEggLoad()']]],
+  ['calcparasitised_0',['CalcParasitised',['../classOsmia__Female.html#a269b5fbc57f1616368013942cd9ee577',1,'Osmia_Female']]],
+  ['calculateeggload_1',['CalculateEggLoad',['../classOsmia__Female.html#a57d49547e2a2fd54ae90caacad2df17a',1,'Osmia_Female']]],
   ['calforagehours_2',['CalForageHours',['../classOsmia__Population__Manager.html#a0bd3985c1d7e6eee0f448b3dfab5907c',1,'Osmia_Population_Manager']]],
   ['cfg_5fmalemintargetprovisionmass_3',['cfg_MaleMinTargetProvisionMass',['../Osmia__Population__Manager__dox_8cpp.html#a1d55cdc94cd11047bede77d4ddafe714',1,'Osmia_Population_Manager_dox.cpp']]],
   ['cfg_5fmaximumcellconstructiontime_4',['cfg_MaximumCellConstructionTime',['../Osmia__Population__Manager__dox_8cpp.html#a3ddca2d5e8e0e07708aac39eb2688ac3',1,'Osmia_Population_Manager_dox.cpp']]],
@@ -93,9 +93,11 @@ var searchData=
   ['cfg_5fosmiasexratiovsmothermasslinear_90',['cfg_OsmiaSexRatioVsMotherMassLinear',['../Osmia__Population__Manager__dox_8cpp.html#a71ffab94903d99eddd40da03434f77f1',1,'Osmia_Population_Manager_dox.cpp']]],
   ['cfg_5fosmiastartno_91',['cfg_OsmiaStartNo',['../Osmia__Population__Manager__dox_8cpp.html#a95e8b7c7685b979f86398d45583dd003',1,'Osmia_Population_Manager_dox.cpp']]],
   ['cfg_5fosmiasugarperday_92',['cfg_OsmiaSugarPerDay',['../Osmia__dox_8cpp.html#a53193f5d8cedb347457d7991eda1b251',1,'Osmia_dox.cpp']]],
-  ['cfg_5fpollenscoretomg_93',['cfg_PollenScoreToMg',['../Osmia__Population__Manager__dox_8cpp.html#a6e57875b63bcca50ca17c6922f3b2a1b',1,'Osmia_Population_Manager_dox.cpp']]],
-  ['cfg_5ftotalnestspossible_94',['cfg_TotalNestsPossible',['../Osmia__Population__Manager__dox_8cpp.html#a57ddaebbc338e9aa663b7a059d89a1b0',1,'Osmia_Population_Manager_dox.cpp']]],
-  ['cfg_5fusingmechanisticparasitoids_95',['cfg_UsingMechanisticParasitoids',['../Osmia__Population__Manager__dox_8cpp.html#a36f3042a8708f83c7ee63caa4795536b',1,'Osmia_Population_Manager_dox.cpp']]],
-  ['cleardensitygrid_96',['ClearDensityGrid',['../classOsmia__Population__Manager.html#ab2637e52f81e1a79509f1dc8fa41782f',1,'Osmia_Population_Manager']]],
-  ['createnest_97',['CreateNest',['../classOsmia__Population__Manager.html#add181bfe760f2450d8834b8fcaf96d3a',1,'Osmia_Population_Manager']]]
+  ['cfg_5fosmiatotalcocoonmassloss_93',['cfg_OsmiaTotalCocoonMassLoss',['../Osmia__enh__HeaderWithBase_8h.html#a3e9e686bce43f3b03928014f216573b0',1,'Osmia_enh_HeaderWithBase.h']]],
+  ['cfg_5fosmiatotalcocoonmasslossrange_94',['cfg_OsmiaTotalCocoonMassLossRange',['../Osmia__enh__HeaderWithBase_8h.html#ae3483f0d38520c7f65ddda4d1ea6f87b',1,'Osmia_enh_HeaderWithBase.h']]],
+  ['cfg_5fpollenscoretomg_95',['cfg_PollenScoreToMg',['../Osmia__Population__Manager__dox_8cpp.html#a6e57875b63bcca50ca17c6922f3b2a1b',1,'Osmia_Population_Manager_dox.cpp']]],
+  ['cfg_5ftotalnestspossible_96',['cfg_TotalNestsPossible',['../Osmia__Population__Manager__dox_8cpp.html#a57ddaebbc338e9aa663b7a059d89a1b0',1,'Osmia_Population_Manager_dox.cpp']]],
+  ['cfg_5fusingmechanisticparasitoids_97',['cfg_UsingMechanisticParasitoids',['../Osmia__Population__Manager__dox_8cpp.html#a36f3042a8708f83c7ee63caa4795536b',1,'Osmia_Population_Manager_dox.cpp']]],
+  ['cleardensitygrid_98',['ClearDensityGrid',['../classOsmia__Population__Manager.html#ab2637e52f81e1a79509f1dc8fa41782f',1,'Osmia_Population_Manager']]],
+  ['createnest_99',['CreateNest',['../classOsmia__Population__Manager.html#add181bfe760f2450d8834b8fcaf96d3a',1,'Osmia_Population_Manager']]]
 ];

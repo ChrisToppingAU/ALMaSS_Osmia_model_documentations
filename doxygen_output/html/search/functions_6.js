@@ -1,4 +1,29 @@
 var searchData=
 [
-  ['hasnestcapacity_0',['HasNestCapacity',['../classOsmiaPolygonEntry.html#a484ecfb974d52cfa451b7e46fa1b4efd',1,'OsmiaPolygonEntry']]]
+  ['g_5funi_5f0to15_0',['g_uni_0to15',['../Osmia__dox_8cpp.html#ac6390c802d6e10be25d3076bbd1b32b9',1,'Osmia_dox.cpp']]],
+  ['getage_1',['GetAge',['../classOsmia__Base.html#a0eb42886adda7c91ded761c230a4c8c3',1,'Osmia_Base']]],
+  ['getagedegrees_2',['GetAgeDegrees',['../classOsmia__Egg.html#a53fd0def97083d9240e63a1d1f26b766',1,'Osmia_Egg']]],
+  ['getaspectdelay_3',['GetAspectDelay',['../classOsmia__Nest.html#ace9d180f5ef3278300de8eac3162b988',1,'Osmia_Nest']]],
+  ['getcellcount_4',['GetCellCount',['../classOsmia__Nest.html#aa530a1435ae2ad1e0319bd22f0098f96',1,'Osmia_Nest']]],
+  ['getcurrentnestcount_5',['GetCurrentNestCount',['../classOsmiaPolygonEntry.html#a7a2b7c93fc043653653950236459ab9d',1,'OsmiaPolygonEntry']]],
+  ['getddprewinter_6',['GetDDPreWinter',['../classOsmia__InCocoon.html#a7293639b902e5b06b987e441884b6b24',1,'Osmia_InCocoon']]],
+  ['getdensity_7',['GetDensity',['../classOsmia__Population__Manager.html#adbfdb5f5c249152bc427717afaf9edec',1,'Osmia_Population_Manager::GetDensity(APoint a_loc)'],['../classOsmia__Population__Manager.html#a168aedc66c93d70c844465d5aaceeea6',1,'Osmia_Population_Manager::GetDensity(int a_index)']]],
+  ['getfirstcocoonprovisioningmass_8',['GetFirstCocoonProvisioningMass',['../classOsmia__Population__Manager.html#ae6d5c7749d17a5368548ed28341cef60',1,'Osmia_Population_Manager']]],
+  ['getforagehours_9',['GetForageHours',['../classOsmia__Population__Manager.html#af48bca28781c43870956c074526ba2be',1,'Osmia_Population_Manager']]],
+  ['getmass_10',['GetMass',['../classOsmia__Base.html#a036442a86deea6a1dea819f11a1e23cf',1,'Osmia_Base']]],
+  ['getmaxnests_11',['GetMaxNests',['../classOsmiaPolygonEntry.html#aca26bbe0b8b3f8513599550a40f1739d',1,'OsmiaPolygonEntry']]],
+  ['getnest_12',['GetNest',['../classOsmia__Base.html#a6b463e386b1f60e44f357a953071ea99',1,'Osmia_Base']]],
+  ['getnestlist_13',['GetNestList',['../classOsmiaPolygonEntry.html#a8aaeb0c34db0cca2f905cecabce3c568',1,'OsmiaPolygonEntry']]],
+  ['getosmianestprob_14',['GetOsmiaNestProb',['../classOsmiaPolygonEntry.html#aea0176d18cee162909ce5047ad077cb4',1,'OsmiaPolygonEntry']]],
+  ['getparasitised_15',['GetParasitised',['../classOsmia__Base.html#aaa18aa15ec376d420d71fd46cd8b73a3',1,'Osmia_Base']]],
+  ['getparasitoidnumbers_16',['GetParasitoidNumbers',['../classOsmiaParasitoid__Population__Manager.html#a4816f5ad1df1a43e52a9b45f115ca03e',1,'OsmiaParasitoid_Population_Manager']]],
+  ['getpolleninpolygon_17',['GetPollenInPolygon',['../classOsmia__Female.html#a5dafa90f6fec39268fe19b33098c0d12',1,'Osmia_Female']]],
+  ['getpolyref_18',['GetPolyRef',['../classOsmia__Nest.html#aca8d2d06e0518a37c49dbf82bd2b0a01',1,'Osmia_Nest']]],
+  ['getprepupaldeveldays_19',['GetPrePupalDevelDays',['../classOsmia__Population__Manager.html#a39293145ad4e75b9e49069b9c5107391',1,'Osmia_Population_Manager']]],
+  ['getprovisioningparams_20',['GetProvisioningParams',['../classOsmia__Population__Manager.html#aaad8e681ff0f0b5ac24c50a289701496',1,'Osmia_Population_Manager']]],
+  ['getsexratioeggsagemass_21',['GetSexRatioEggsAgeMass',['../classOsmia__Population__Manager.html#a07440f88c0d15804f59f4b3ae165bdf0',1,'Osmia_Population_Manager']]],
+  ['getsize_22',['GetSize',['../classOsmiaParasitoid__Population__Manager.html#a9b47fe3b5711e029122cafd9c337c912',1,'OsmiaParasitoid_Population_Manager::GetSize(int a_ref)'],['../classOsmiaParasitoid__Population__Manager.html#a538e2b236f0184a796b8bfddf9e676bc',1,'OsmiaParasitoid_Population_Manager::GetSize(int a_x, int a_y)']]],
+  ['getsubpopnsize_23',['GetSubPopnSize',['../classOsmiaParasitoidSubPopulation.html#a33fc7351847005ca70f9d65901e88b6a',1,'OsmiaParasitoidSubPopulation']]],
+  ['getx_24',['GetX',['../classOsmia__Nest.html#a7cc950189fff3d91fbf0c31f296ddabd',1,'Osmia_Nest']]],
+  ['gety_25',['GetY',['../classOsmia__Nest.html#a205e483e0d7760154c7d9d5306c2002c',1,'Osmia_Nest']]]
 ];

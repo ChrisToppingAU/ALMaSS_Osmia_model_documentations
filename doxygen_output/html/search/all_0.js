@@ -47,5 +47,5 @@ var searchData=
   ['1_20spatial_20resolution_44',['2.3.1 Spatial Resolution',['../index.html#autotoc_md16',1,'']]],
   ['1_20standard_20output_20files_45',['7.2.1 Standard Output Files',['../index.html#autotoc_md74',1,'']]],
   ['10_20years_46',['8.4.3 Long-Term Research Agenda (5-10 years)',['../index.html#autotoc_md100',1,'']]],
-  ['1_3a_20dofirst_20environmental_20updates_47',['Phase 1: DoFirst() - Environmental Updates',['../index.html#autotoc_md24',1,'']]]
+  ['1_3a_20dofirst_20dofirst_20environmental_20updates_47',['Phase 1: DoFirst() - Environmental Updates',['../index.html#autotoc_md24',1,'']]]
 ];

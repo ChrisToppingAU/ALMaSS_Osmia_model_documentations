@@ -27,8 +27,9 @@ var searchData=
   ['start_24',['Compilation Quick Start',['../index.html#autotoc_md112',1,'']]],
   ['station_20data_25',['6.3.2 Processing Weather Station Data',['../index.html#autotoc_md66',1,'']]],
   ['step_20main_20agent_20actions_26',['Phase 3: Individual Step() - Main Agent Actions',['../index.html#autotoc_md26',1,'']]],
-  ['strategy_27',['3.3 Parallelization Strategy',['../index.html#autotoc_md29',1,'']]],
-  ['structure_28',['Structure',['../index.html#autotoc_md7',1,'1.4 Document Structure'],['../index.html#autotoc_md111',1,'Configuration File Structure']]],
-  ['structured_20approaches_29',['8.1.1 Agent-Based vs. Stage-Structured Approaches',['../index.html#autotoc_md86',1,'']]],
-  ['surveys_30',['6.3.1 Creating Pollen Maps from Field Surveys',['../index.html#autotoc_md65',1,'']]]
+  ['step_20step_20main_20agent_20actions_27',['Phase 3: Individual Step() - Main Agent Actions',['../index.html#autotoc_md26',1,'']]],
+  ['strategy_28',['3.3 Parallelization Strategy',['../index.html#autotoc_md29',1,'']]],
+  ['structure_29',['Structure',['../index.html#autotoc_md7',1,'1.4 Document Structure'],['../index.html#autotoc_md111',1,'Configuration File Structure']]],
+  ['structured_20approaches_30',['8.1.1 Agent-Based vs. Stage-Structured Approaches',['../index.html#autotoc_md86',1,'']]],
+  ['surveys_31',['6.3.1 Creating Pollen Maps from Field Surveys',['../index.html#autotoc_md65',1,'']]]
 ];

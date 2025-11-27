@@ -25,7 +25,9 @@ var searchData=
   ['document_20structure_22',['1.4 Document Structure',['../index.html#autotoc_md7',1,'']]],
   ['documentation_23',['&lt;em&gt;Osmia bicornis&lt;/em&gt; Population Model: MIDox Implementation Documentation',['../index.html',1,'']]],
   ['documentation_20access_24',['9. Documentation Access',['../index.html#autotoc_md105',1,'']]],
-  ['dofirst_20environmental_20updates_25',['Phase 1: DoFirst() - Environmental Updates',['../index.html#autotoc_md24',1,'']]],
-  ['dolast_20end_20of_20day_20processing_26',['Phase 4: DoLast() - End-of-Day Processing',['../index.html#autotoc_md27',1,'']]],
-  ['dynamics_27',['4.2.2 Provisioning Dynamics',['../index.html#autotoc_md39',1,'']]]
+  ['dofirst_20dofirst_20environmental_20updates_25',['Phase 1: DoFirst() - Environmental Updates',['../index.html#autotoc_md24',1,'']]],
+  ['dofirst_20environmental_20updates_26',['Phase 1: DoFirst() - Environmental Updates',['../index.html#autotoc_md24',1,'']]],
+  ['dolast_20dolast_20end_20of_20day_20processing_27',['Phase 4: DoLast() - End-of-Day Processing',['../index.html#autotoc_md27',1,'']]],
+  ['dolast_20end_20of_20day_20processing_28',['Phase 4: DoLast() - End-of-Day Processing',['../index.html#autotoc_md27',1,'']]],
+  ['dynamics_29',['4.2.2 Provisioning Dynamics',['../index.html#autotoc_md39',1,'']]]
 ];

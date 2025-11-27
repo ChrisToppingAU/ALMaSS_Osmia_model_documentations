@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['weather_20data_0',['6.1.3 Weather Data',['../index.html#autotoc_md59',1,'']]],
-  ['weather_20station_20data_1',['6.3.2 Processing Weather Station Data',['../index.html#autotoc_md66',1,'']]],
-  ['wintermortality_2',['WinterMortality',['../classOsmia__InCocoon.html#aba61dd7b9da3b7ab6059a44ef9586e5b',1,'Osmia_InCocoon::WinterMortality()'],['../classOsmia__InCocoon.html#aba61dd7b9da3b7ab6059a44ef9586e5b',1,'Osmia_InCocoon::WinterMortality()']]],
-  ['workflow_3',['3. Scheduling and Workflow',['../index.html#autotoc_md22',1,'']]],
-  ['workflows_4',['6.3 Data Preparation Workflows',['../index.html#autotoc_md64',1,'']]]
+  ['validation_20and_20uncertainty_0',['2.5 Model Validation and Uncertainty',['../index.html#autotoc_md21',1,'']]],
+  ['validation_20outputs_20if_20testing_20mode_20enabled_1',['7.2.2 Validation Outputs (if testing mode enabled)',['../index.html#autotoc_md75',1,'']]],
+  ['viability_2',['7.3.1 Assessing Population Viability',['../index.html#autotoc_md77',1,'']]],
+  ['visualization_3',['7.4 Post-Processing and Visualization',['../index.html#autotoc_md80',1,'']]],
+  ['visualization_20approaches_4',['7.4.1 Recommended Visualization Approaches',['../index.html#autotoc_md81',1,'']]],
+  ['vs_20finer_20temporal_20resolution_5',['8.1.2 Daily vs. Finer Temporal Resolution',['../index.html#autotoc_md87',1,'']]],
+  ['vs_20grid_6',['8.1.3 Polygon-Based Landscape vs. Grid',['../index.html#autotoc_md88',1,'']]],
+  ['vs_20stage_20structured_20approaches_7',['8.1.1 Agent-Based vs. Stage-Structured Approaches',['../index.html#autotoc_md86',1,'']]]
 ];

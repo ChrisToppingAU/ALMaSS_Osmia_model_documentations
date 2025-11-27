@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="OsmiaPolygonEntry",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classOsmiaPolygonEntry.html",tooltip="Nest list and density controls for a single landscape polygon."];
+  Node0 [id="Node000000",label="OsmiaParasitoidSubPopulation",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classOsmiaParasitoidSubPopulation.html",tooltip="Spatially-explicit sub-population for a single parasitoid species."];
 }

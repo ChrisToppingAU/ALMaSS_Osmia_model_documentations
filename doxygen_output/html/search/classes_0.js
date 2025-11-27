@@ -1,10 +1,19 @@
 var searchData=
 [
-  ['osmia_5ffemale_0',['Osmia_Female',['../classOsmia__Female.html',1,'']]],
-  ['osmia_5fincocoon_1',['Osmia_InCocoon',['../classOsmia__InCocoon.html',1,'']]],
-  ['osmia_5fpopulation_5fmanager_2',['Osmia_Population_Manager',['../classOsmia__Population__Manager.html',1,'']]],
-  ['osmiaparasitoid_5fpopulation_5fmanager_3',['OsmiaParasitoid_Population_Manager',['../classOsmiaParasitoid__Population__Manager.html',1,'']]],
-  ['osmiaparasitoidsubpopulation_4',['OsmiaParasitoidSubPopulation',['../classOsmiaParasitoidSubPopulation.html',1,'']]],
-  ['osmiapollennectarthresholds_5',['OsmiaPollenNectarThresholds',['../classOsmiaPollenNectarThresholds.html',1,'']]],
-  ['osmiapolygonentry_6',['OsmiaPolygonEntry',['../classOsmiaPolygonEntry.html',1,'']]]
+  ['osmia_5fbase_0',['Osmia_Base',['../classOsmia__Base.html',1,'']]],
+  ['osmia_5fegg_1',['Osmia_Egg',['../classOsmia__Egg.html',1,'']]],
+  ['osmia_5ffemale_2',['Osmia_Female',['../classOsmia__Female.html',1,'']]],
+  ['osmia_5fincocoon_3',['Osmia_InCocoon',['../classOsmia__InCocoon.html',1,'']]],
+  ['osmia_5flarva_4',['Osmia_Larva',['../classOsmia__Larva.html',1,'']]],
+  ['osmia_5fnest_5',['Osmia_Nest',['../classOsmia__Nest.html',1,'']]],
+  ['osmia_5fpopulation_5fmanager_6',['Osmia_Population_Manager',['../classOsmia__Population__Manager.html',1,'']]],
+  ['osmia_5fprepupa_7',['Osmia_Prepupa',['../classOsmia__Prepupa.html',1,'']]],
+  ['osmia_5fpupa_8',['Osmia_Pupa',['../classOsmia__Pupa.html',1,'']]],
+  ['osmiaforagemask_9',['OsmiaForageMask',['../classOsmiaForageMask.html',1,'']]],
+  ['osmiaforagemaskdetailed_10',['OsmiaForageMaskDetailed',['../classOsmiaForageMaskDetailed.html',1,'']]],
+  ['osmianestdata_11',['OsmiaNestData',['../classOsmiaNestData.html',1,'']]],
+  ['osmiaparasitoid_5fpopulation_5fmanager_12',['OsmiaParasitoid_Population_Manager',['../classOsmiaParasitoid__Population__Manager.html',1,'']]],
+  ['osmiaparasitoidsubpopulation_13',['OsmiaParasitoidSubPopulation',['../classOsmiaParasitoidSubPopulation.html',1,'']]],
+  ['osmiapollennectarthresholds_14',['OsmiaPollenNectarThresholds',['../classOsmiaPollenNectarThresholds.html',1,'']]],
+  ['osmiapolygonentry_15',['OsmiaPolygonEntry',['../classOsmiaPolygonEntry.html',1,'']]]
 ];

@@ -100,7 +100,7 @@ $(function(){initNavTree('index.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_docs_2Osmia__MIDox__Complete"></a></p>
-<p><b>Authors: 99999Christopher John Topping, Xiaodong Duan, Elzbieta Ziolkowska</b></p>
+<p><b>Authors: Christopher John Topping, Xiaodong Duan, Elzbieta Ziolkowska</b></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Abstract</h1>
 <p>This document provides comprehensive implementation documentation for an agent-based population model of the red mason bee (<em>Osmia bicornis</em>) developed within the ALMaSS (Animal Landscape and Man Simulation System) framework. The model simulates individual bee life cycles from egg through adult, incorporating temperature-dependent development, resource-limited provisioning behaviour, and overwintering physiology. Implementation follows the MIDox (Model Implementation Documentation with Doxygen) standard, providing detailed parameter documentation, biological rationale for design decisions, and explicit assessment of uncertainties. The model serves multiple research purposes: evaluating landscape management effects on solitary bee populations, assessing pesticide risks to pollinator communities, and exploring climate change impacts on bee phenology. Complete interactive documentation with full code cross-references is available at the GitHub Pages and Zenodo repositories listed in Section 9.</p>
@@ -182,14 +182,14 @@ Abstract</h1>
 2.2.1 Agent Types and Life Stages</h3>
 <p>The model implements an agent-based architecture where individual bees are autonomous entities (agents) progressing through discrete life stages. Six agent classes represent developmental stages:</p>
 <ul>
-<li>Osmia_Egg: From laying to hatching (temperature-dependent duration)</li>
-<li>Osmia_Larva: Feeding and cocoon construction (resource-dependent growth)</li>
-<li>Osmia_Prepupa: Summer diapause (time-based, weakly temperature-dependent)</li>
-<li>Osmia_Pupa: Metamorphosis to adult form (temperature-dependent duration)</li>
-<li>Osmia_InCocoon: Fully-developed adult within cocoon (includes overwintering)</li>
-<li>Osmia_Female: Free-living reproductive female (foraging, nesting, dispersal)</li>
+<li><a class="el" href="classOsmia__Egg.html">Osmia_Egg</a>: From laying to hatching (temperature-dependent duration)</li>
+<li><a class="el" href="classOsmia__Larva.html">Osmia_Larva</a>: Feeding and cocoon construction (resource-dependent growth)</li>
+<li><a class="el" href="classOsmia__Prepupa.html">Osmia_Prepupa</a>: Summer diapause (time-based, weakly temperature-dependent)</li>
+<li><a class="el" href="classOsmia__Pupa.html">Osmia_Pupa</a>: Metamorphosis to adult form (temperature-dependent duration)</li>
+<li><a class="el" href="classOsmia__InCocoon.html">Osmia_InCocoon</a>: Fully-developed adult within cocoon (includes overwintering)</li>
+<li><a class="el" href="classOsmia__Female.html">Osmia_Female</a>: Free-living reproductive female (foraging, nesting, dispersal)</li>
 </ul>
-<p>All agent classes inherit from Osmia_Base, which provides common attributes (age, mass, location) and methods (mortality checking, temperature access). This inheritance structure reduces code duplication whilst enabling stage-specific specialization.</p>
+<p>All agent classes inherit from <a class="el" href="classOsmia__Base.html">Osmia_Base</a>, which provides common attributes (age, mass, location) and methods (mortality checking, temperature access). This inheritance structure reduces code duplication whilst enabling stage-specific specialization.</p>
 <p>Males are not explicitly modelled. This design decision reflects biological reality (<em>Osmia bicornis</em> females are sole provisioners) and computational efficiency (modelling males would double agent count without substantially affecting female behaviour or population dynamics). Male abundance and mating success are implicit: females are assumed mated, and sex ratios emerge from maternal provisioning decisions.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md13"></a>
 2.2.2 Population Manager</h3>
@@ -210,7 +210,7 @@ Abstract</h1>
 <li>Active nests (currently occupied by provisioning females)</li>
 <li>Nest lifecycle (creation when female claims cavity, release when abandoned or offspring emerge)</li>
 </ul>
-<p>Individual nests (modelled by Osmia_Nest) contain linearly-arranged cells, each provisioned sequentially by the founding female. Nest structures persist across years (perennial nesting sites), though individual nest occupancy is annual (single reproductive season).</p>
+<p>Individual nests (modelled by <a class="el" href="classOsmia__Nest.html">Osmia_Nest</a>) contain linearly-arranged cells, each provisioned sequentially by the founding female. Nest structures persist across years (perennial nesting sites), though individual nest occupancy is annual (single reproductive season).</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md15"></a>
 2.3 Spatial and Temporal Scales</h2>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md16"></a>
@@ -270,7 +270,7 @@ Abstract</h1>
 3. Scheduling and Workflow</h1>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md23"></a>
 3.1 Daily Execution Sequence</h2>
-<p>The model executes with daily time steps following the ALMaSS framework's standardized scheduling pattern. Each day proceeds through four phases coordinated by the Osmia_Population_Manager:</p>
+<p>The model executes with daily time steps following the ALMaSS framework's standardized scheduling pattern. Each day proceeds through four phases coordinated by the <a class="el" href="classOsmia__Population__Manager.html">Osmia_Population_Manager</a>:</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md24"></a>
 Phase 1: DoFirst() - Environmental Updates</h3>
 <div class="fragment"><div class="line">FOR each day:</div>
@@ -294,7 +294,7 @@ Phase 1: DoFirst() - Environmental Updates</h3>
 <div class="line">    // Update nest manager status</div>
 <div class="line">    nest_manager.UpdateOsmiaNesting()  // Check for abandoned nests</div>
 <div class="line">    </div>
-<div class="line">    // Clear density grid (will be repopulated during @ref BeginStep())</div>
+<div class="line">    // Clear density grid (will be repopulated during [BeginStep()](@ref BeginStep()))</div>
 <div class="line">    FOR each grid_cell:</div>
 <div class="line">        grid_cell.female_count = 0</div>
 </div><!-- fragment --><p>This phase sets up shared environmental state that all agents will access during their individual updates. Calculations performed once per day rather than per agent yields substantial computational savings (O(1) vs. O(N) operations).</p>
@@ -302,7 +302,7 @@ Phase 1: DoFirst() - Environmental Updates</h3>
 Phase 2: Individual BeginStep() - Agent Pre-Processing</h3>
 <div class="fragment"><div class="line">FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:</div>
 <div class="line">    FOR each individual IN life_stage:</div>
-<div class="line">        individual.@ref BeginStep()</div>
+<div class="line">        individual.[BeginStep()](@ref BeginStep())</div>
 </div><!-- fragment --><p>Stage-specific BeginStep() implementations prepare agents for daily updates:</p>
 <p><b>Egg/Larva/Prepupa/Pupa</b>: Check for completion of development </p><div class="fragment"><div class="line">accumulated_development += daily_development_increment</div>
 <div class="line">IF accumulated_development &gt;= required_development:</div>
@@ -322,7 +322,7 @@ Phase 2: Individual BeginStep() - Agent Pre-Processing</h3>
 Phase 3: Individual Step() - Main Agent Actions</h3>
 <div class="fragment"><div class="line">FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:</div>
 <div class="line">    FOR each individual IN life_stage:</div>
-<div class="line">        individual.@ref Step()</div>
+<div class="line">        individual.[Step()](@ref Step())</div>
 </div><!-- fragment --><p>This phase implements stage-specific behaviour. For developmental stages (Egg through InCocoon), Step() applies mortality and signals transitions. For <a class="el" href="classOsmia__Female.html">Osmia_Female</a>, Step() executes the behavioural state machine:</p>
 <div class="fragment"><div class="line">WHILE state != DONE:</div>
 <div class="line">    SWITCH current_state:</div>
@@ -397,7 +397,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <p>The model supports parallel execution using OpenMP:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
 <div class="line">FOR each individual IN population:</div>
-<div class="line">    individual.@ref Step()</div>
+<div class="line">    individual.[Step()](@ref Step())</div>
 </div><!-- fragment --><p>Thread safety ensured through:</p><ul>
 <li><b>Read-only global state</b>: Temperature, weather, resource maps accessed but not modified</li>
 <li><b>Local agent state</b>: Each agent modifies only its own attributes</li>
@@ -411,7 +411,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <p>This section describes key implementation components with extensive cross-references to source code. All code elements are hyperlinked in the HTML documentation; readers can navigate directly from narrative explanation to implementation.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md32"></a>
 4.1 Development and Mortality</h2>
-<p>All developmental stages inherit core development and mortality processes from Osmia_Base. Stage-specific implementations (e.g., Osmia_Egg::Step, Osmia_Larva::Step) customize these processes whilst reusing infrastructure.</p>
+<p>All developmental stages inherit core development and mortality processes from <a class="el" href="classOsmia__Base.html">Osmia_Base</a>. Stage-specific implementations (e.g., <a class="el" href="classOsmia__Egg.html#aa7f3b64133c6f0c2e0bba21d10cd9224">Osmia_Egg::Step</a>, <a class="el" href="classOsmia__Larva.html#af692e0d9ae9fc0d08ce9ba76a5b79a3d">Osmia_Larva::Step</a>) customize these processes whilst reusing infrastructure.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md33"></a>
 4.1.1 Degree-Day Development Model</h3>
 <p>Egg, larval, and pupal stages use standard linear degree-day accumulation:</p>
@@ -424,13 +424,13 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <div class="line">    <span class="comment">// Development complete, signal transition to next stage</span></div>
 <div class="line">    TransitionToLarva();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p><b>Parameters</b> (see Osmia_Base for full documentation):</p><ul>
-<li>Osmia_Base::m_OsmiaEggDevelThreshold: 0.0°C (calibrated; see Section 5.1)</li>
-<li>Osmia_Base::m_OsmiaEggDevelTotalDD: 86 degree-days (calibrated; see Section 5.1)</li>
-<li>Osmia_Base::m_OsmiaLarvaDevelThreshold: 13.8°C (Radmacher &amp; Strohm 2011)</li>
-<li>Osmia_Base::m_OsmiaLarvaDevelTotalDD: 240 degree-days (Radmacher &amp; Strohm 2011)</li>
-<li>Osmia_Base::m_OsmiaPupaDevelThreshold: 1.1°C (calibrated; see Section 5.1)</li>
-<li>Osmia_Base::m_OsmiaPupaDevelTotalDD: 570 degree-days (calibrated; see Section 5.1)</li>
+</div><!-- fragment --><p><b>Parameters</b> (see <a class="el" href="classOsmia__Base.html">Osmia_Base</a> for full documentation):</p><ul>
+<li><a class="el" href="classOsmia__Base.html#a943d1b50c8597c484406c823129ca46b">Osmia_Base::m_OsmiaEggDevelThreshold</a>: 0.0°C (calibrated; see Section 5.1)</li>
+<li><a class="el" href="classOsmia__Base.html#acf4e4c25281feb20ddbea5f89d9a56bd">Osmia_Base::m_OsmiaEggDevelTotalDD</a>: 86 degree-days (calibrated; see Section 5.1)</li>
+<li><a class="el" href="classOsmia__Base.html#a64d531bb715be09b178af769c9431087">Osmia_Base::m_OsmiaLarvaDevelThreshold</a>: 13.8°C (Radmacher &amp; Strohm 2011)</li>
+<li><a class="el" href="classOsmia__Base.html#a18f7b432befbcc71d25456075bc0a1a9">Osmia_Base::m_OsmiaLarvaDevelTotalDD</a>: 240 degree-days (Radmacher &amp; Strohm 2011)</li>
+<li><a class="el" href="classOsmia__Base.html#abfc0d7c3950c4b413b42b67f6312db83">Osmia_Base::m_OsmiaPupaDevelThreshold</a>: 1.1°C (calibrated; see Section 5.1)</li>
+<li><a class="el" href="classOsmia__Base.html#a8eea6fec9939c5b3046416a630d62499">Osmia_Base::m_OsmiaPupaDevelTotalDD</a>: 570 degree-days (calibrated; see Section 5.1)</li>
 </ul>
 <p><b>Implementation Difference from Formal Model</b>: Egg and pupal thresholds substantially reduced from laboratory values (13.8°C → 0.0°C for eggs, 13.2°C → 1.1°C for pupae) to prevent developmental failures under field temperature regimes. See Section 8.3 for detailed justification.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md34"></a>
@@ -445,7 +445,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 </div><!-- fragment --><p>The rate lookup uses integer temperature (0-41°C) to index a pre-calculated array (see <a class="el" href="classOsmia__Population__Manager.html#a8dc33bb2117535d08fd02218e5c1f263">Osmia_Population_Manager::m_PrePupalDevelRates</a>). Rates follow a thermal performance curve: low at temperature extremes, peaking around 20-25°C.</p>
 <p><b>Rationale</b>: The formal model specifies a quadratic temperature-development relationship based on Radmacher &amp; Strohm (2011) laboratory studies at constant temperatures. Under field conditions with daily temperature fluctuations, this relationship produced unrealistic developmental durations. The lookup table approach allows flexible parameterization empirically calibrated to field emergence phenology whilst acknowledging mechanistic uncertainty. See Section 8.3 for extended discussion.</p>
 <p><b>Parameters</b>:</p><ul>
-<li>Osmia_Base::m_OsmiaPrepupalDevelTotalDays: 45 days (approximate; weakly temperature-dependent)</li>
+<li><a class="el" href="classOsmia__Base.html#a54fe00f6e2131f6120d400216090c353">Osmia_Base::m_OsmiaPrepupalDevelTotalDays</a>: 45 days (approximate; weakly temperature-dependent)</li>
 <li>Temperature-rate lookup: <a class="el" href="classOsmia__Population__Manager.html#a8dc33bb2117535d08fd02218e5c1f263">Osmia_Population_Manager::m_PrePupalDevelRates</a></li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md35"></a>
@@ -462,8 +462,8 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <div class="line">}</div>
 </div><!-- fragment --><p>This three-phase structure creates realistic emergence phenology: early warmth doesn't trigger emergence (chilling requirement unmet); late cold delays emergence despite sufficient chilling (temperature-dependent emergence probability).</p>
 <p><b>Parameters</b>:</p><ul>
-<li>Osmia_Base::m_OsmiaInCocoonOverwinteringTempThreshold: 5.0°C</li>
-<li>Osmia_Base::m_OsmiaInCocoonEmergCountConst, Osmia_Base::m_OsmiaInCocoonEmergCountSlope: Emergence probability equation parameters</li>
+<li><a class="el" href="classOsmia__Base.html#a9b9ace3343db1164b306b62bfdc3af2d">Osmia_Base::m_OsmiaInCocoonOverwinteringTempThreshold</a>: 5.0°C</li>
+<li><a class="el" href="classOsmia__Base.html#a250a9a2928c6cb51fb898bc917d208dc">Osmia_Base::m_OsmiaInCocoonEmergCountConst</a>, <a class="el" href="classOsmia__Base.html#aefc47a8d00ee0a673b4cbd274de3a88a">Osmia_Base::m_OsmiaInCocoonEmergCountSlope</a>: Emergence probability equation parameters</li>
 </ul>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md36"></a>
 4.1.4 Mortality Processes</h3>
@@ -513,7 +513,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <p><b>Step 1: Plan eggs for this nest</b> </p><div class="fragment"><div class="line"><span class="keywordtype">int</span> eggs_this_nest = MinEggsPerNest + </div>
 <div class="line">                     g_rand_int(MaxEggsPerNest - MinEggsPerNest);</div>
 </div><!-- fragment --><p> Drawn from uniform(3, 30), matching empirical nest size distributions (Ivanov 2006).</p>
-<p><b>Step 2: Forage for pollen</b> Female searches for flower patches using pre-calculated foraging mask (see OsmiaForageMaskDetailed). Mask identifies reachable patches within maximum homing distance ordered by proximity. Female visits nearest patch meeting quality/quantity thresholds:</p>
+<p><b>Step 2: Forage for pollen</b> Female searches for flower patches using pre-calculated foraging mask (see <a class="el" href="classOsmiaForageMaskDetailed.html">OsmiaForageMaskDetailed</a>). Mask identifies reachable patches within maximum homing distance ordered by proximity. Female visits nearest patch meeting quality/quantity thresholds:</p>
 <div class="fragment"><div class="line">FOR each patch IN foraging_mask (nearest first):</div>
 <div class="line">    pollen_available = GetPollenFromMap(patch)</div>
 <div class="line">    IF (pollen_available &gt; threshold_quantity AND</div>
@@ -555,8 +555,8 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md42"></a>
 4.3.1 Foraging Range and Resource Assessment</h3>
 <p>Females search for flower patches within species-specific foraging range. Implementation uses two data structures:</p>
-<p><b>1. Foraging Mask</b> (OsmiaForageMask): Coarse radial search (100 m steps) identifying candidate patches within typical homing distance (~600 m). Used for initial patch identification.</p>
-<p><b>2. Detailed Mask</b> (OsmiaForageMaskDetailed): Fine-resolution (1 m steps) mapping specific locations within maximum homing distance (~900 m). Used when extensive search required (poor local resources).</p>
+<p><b>1. Foraging Mask</b> (<a class="el" href="classOsmiaForageMask.html">OsmiaForageMask</a>): Coarse radial search (100 m steps) identifying candidate patches within typical homing distance (~600 m). Used for initial patch identification.</p>
+<p><b>2. Detailed Mask</b> (<a class="el" href="classOsmiaForageMaskDetailed.html">OsmiaForageMaskDetailed</a>): Fine-resolution (1 m steps) mapping specific locations within maximum homing distance (~900 m). Used when extensive search required (poor local resources).</p>
 <p>Both masks pre-calculated to avoid repeated distance computations during daily foraging decisions.</p>
 <p>Resource assessment queries pollen map (10 m resolution) at patch centroids: </p><div class="fragment"><div class="line"><span class="keywordtype">double</span> pollen_score = pollen_map-&gt;GetPollenAvailability(x, y);</div>
 <div class="line"><span class="keywordtype">double</span> pollen_mg = pollen_score × PollenScoreToMg × (1 - competition_scalar);</div>
@@ -591,7 +591,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 5.1 Parameter Organization</h2>
 <p>Model parameters fall into five categories based on their biological role and data sources:</p>
 <p><b>1. Development Parameters</b> - Degree-day requirements and thresholds <b>2. Mortality Parameters</b> - Daily probabilities and survival functions <b>3. Provisioning Parameters</b> - Resource conversion factors and behavioral thresholds <b>4. Spatial Parameters</b> - Movement distances and habitat suitability <b>5. Environmental Parameters</b> - Weather thresholds and seasonal transitions</p>
-<p>All parameters are defined as configuration variables in the C++ source code (see Osmia.cpp and Osmia_Population_Manager.cpp), allowing modification without recompilation. Default values reflect either direct empirical measurements or calibrated values matching observed population dynamics.</p>
+<p>All parameters are defined as configuration variables in the C++ source code (see Osmia.cpp and <a class="el" href="classOsmia__Population__Manager.html">Osmia_Population_Manager</a>.cpp), allowing modification without recompilation. Default values reflect either direct empirical measurements or calibrated values matching observed population dynamics.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
 5.2 Development Parameters</h2>
 <p>| Parameter | Default | Units | Source | Confidence | Description | |--------&mdash;|------&mdash;|----&mdash;|-----&mdash;|---------&mdash;|----------&mdash;| | <b>Egg Stage</b> | | EGG_DEVEL_THRESHOLD | 0.0 | °C | Calibrated | LOW | Lower developmental threshold. <b>Differs from formal model</b> (13.8°C laboratory value; see Section 8.3) | | EGG_DEVEL_TOTAL_DD | 86 | DD | Calibrated | MEDIUM | Degree-days required for hatching. Adjusted from Radmacher &amp; Strohm (2011) | | EGG_DAILY_MORT | 0.0014 | day⁻¹ | Radmacher &amp; Strohm (2011) | HIGH | Daily mortality probability during egg development | | <b>Larval Stage</b> | | LARVA_DEVEL_THRESHOLD | 13.8 | °C | Radmacher &amp; Strohm (2011) | HIGH | Lower developmental threshold from laboratory studies | | LARVA_DEVEL_TOTAL_DD | 240 | DD | Radmacher &amp; Strohm (2011) | HIGH | Degree-days for larval development and cocoon construction | | LARVA_DAILY_MORT | 0.0014 | day⁻¹ | Radmacher &amp; Strohm (2011) | HIGH | Daily mortality probability during larval feeding | | <b>Prepupal Stage</b> | | PREPUPA_DEVEL_TOTAL_DAYS | 45 | days | Calibrated | LOW | Approximate duration of summer diapause. See Section 8.3 for discussion of temperature dependence | | PREPUPA_DEVEL_RATES | [array] | day⁻¹ | Calibrated | LOW | Temperature-specific development rates (0-41°C). Empirically derived from field phenology | | PREPUPA_DAILY_MORT | 0.003 | day⁻¹ | Radmacher &amp; Strohm (2011) | MEDIUM | Daily mortality during diapause | | <b>Pupal Stage</b> | | PUPA_DEVEL_THRESHOLD | 1.1 | °C | Calibrated | MEDIUM | Lower developmental threshold. <b>Differs from formal model</b> (13.2°C laboratory; see Section 8.3) | | PUPA_DEVEL_TOTAL_DD | 570 | DD | Calibrated | MEDIUM | Degree-days for metamorphosis. Adjusted from literature | | PUPA_DAILY_MORT | 0.003 | day⁻¹ | Radmacher &amp; Strohm (2011) | MEDIUM | Daily mortality during pupation | | <b>Overwintering</b> | | OVERWINTER_THRESHOLD | 5.0 | °C | Sgolastra et al. (2011) | MEDIUM | Temperature below which chilling accumulates | | OVERWINTER_REQUIRED_DD | 400-500 | DD | Sgolastra et al. (2011) | MEDIUM | Chilling requirement for spring emergence | | PREWINTER_THRESHOLD | 13.0 | °C | Calibrated | LOW | Temperature triggering onset of overwintering physiology | | EMERG_COUNT_CONST | [value] | - | Fitted | LOW | Intercept for emergence probability equation | | EMERG_COUNT_SLOPE | [value] | DD⁻¹ | Fitted | LOW | Slope for emergence probability vs. accumulated DD |</p>
@@ -1393,15 +1393,15 @@ Key Classes and Their Roles</h2>
 <tr class="markdownTableHead">
 <th class="markdownTableHeadNone">Class  </th><th class="markdownTableHeadNone">Purpose  </th><th class="markdownTableHeadNone">Key Methods  </th></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Osmia_Base  </td><td class="markdownTableBodyNone">Common attributes/methods for all life stages  </td><td class="markdownTableBodyNone">GetTemp(), SetTemp(), CheckMortality()  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classOsmia__Base.html">Osmia_Base</a>  </td><td class="markdownTableBodyNone">Common attributes/methods for all life stages  </td><td class="markdownTableBodyNone">GetTemp(), SetTemp(), CheckMortality()  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Osmia_Egg  </td><td class="markdownTableBodyNone">Egg development and hatching  </td><td class="markdownTableBodyNone">Step(), TransitionToLarva()  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classOsmia__Egg.html">Osmia_Egg</a>  </td><td class="markdownTableBodyNone">Egg development and hatching  </td><td class="markdownTableBodyNone">Step(), TransitionToLarva()  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Osmia_Larva  </td><td class="markdownTableBodyNone">Larval feeding and cocoon construction  </td><td class="markdownTableBodyNone">Step(), TransitionToPrepupa()  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classOsmia__Larva.html">Osmia_Larva</a>  </td><td class="markdownTableBodyNone">Larval feeding and cocoon construction  </td><td class="markdownTableBodyNone">Step(), TransitionToPrepupa()  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Osmia_Prepupa  </td><td class="markdownTableBodyNone">Summer diapause  </td><td class="markdownTableBodyNone">Step(), TransitionToPupa()  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classOsmia__Prepupa.html">Osmia_Prepupa</a>  </td><td class="markdownTableBodyNone">Summer diapause  </td><td class="markdownTableBodyNone">Step(), TransitionToPupa()  </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Osmia_Pupa  </td><td class="markdownTableBodyNone">Metamorphosis to adult  </td><td class="markdownTableBodyNone">Step(), TransitionToInCocoon()  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classOsmia__Pupa.html">Osmia_Pupa</a>  </td><td class="markdownTableBodyNone">Metamorphosis to adult  </td><td class="markdownTableBodyNone">Step(), TransitionToInCocoon()  </td></tr>
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone"><a class="el" href="classOsmia__InCocoon.html">Osmia_InCocoon</a>  </td><td class="markdownTableBodyNone">Overwintering adult in cocoon  </td><td class="markdownTableBodyNone">Step(), Emerge()  </td></tr>
 <tr class="markdownTableRowOdd">
@@ -1411,7 +1411,7 @@ Key Classes and Their Roles</h2>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">Osmia_Nest_Manager  </td><td class="markdownTableBodyNone">Nest availability tracking  </td><td class="markdownTableBodyNone">UpdateOsmiaNesting(), IsNestPossible()  </td></tr>
 <tr class="markdownTableRowEven">
-<td class="markdownTableBodyNone">Osmia_Nest  </td><td class="markdownTableBodyNone">Individual nest structure  </td><td class="markdownTableBodyNone">AddEgg(), AddCocoon(), CloseNest()  </td></tr>
+<td class="markdownTableBodyNone"><a class="el" href="classOsmia__Nest.html">Osmia_Nest</a>  </td><td class="markdownTableBodyNone">Individual nest structure  </td><td class="markdownTableBodyNone">AddEgg(), AddCocoon(), CloseNest()  </td></tr>
 </table>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md111"></a>
 Configuration File Structure</h2>

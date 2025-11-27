@@ -1,22 +1,14 @@
 var searchData=
 [
-  ['female_20provisioning_20behaviour_0',['4.2 Female Provisioning Behaviour',['../index.html#autotoc_md37',1,'']]],
-  ['femalecocoonmassvsagelogisticcurvedata_1',['femalecocoonmassvsagelogisticcurvedata',['../Osmia__Population__Manager__dox_8h.html#a6798b7258653665705da812a13176dc6',1,'Osmia_Population_Manager_dox.h']]],
-  ['field_20surveys_2',['6.3.1 Creating Pollen Maps from Field Surveys',['../index.html#autotoc_md65',1,'']]],
-  ['file_20formats_20and_20naming_3',['7.2 Output File Formats and Naming',['../index.html#autotoc_md73',1,'']]],
-  ['file_20structure_4',['Configuration File Structure',['../index.html#autotoc_md111',1,'']]],
-  ['files_5',['7.2.1 Standard Output Files',['../index.html#autotoc_md74',1,'']]],
-  ['finding_20and_20creation_6',['4.2.1 Nest Finding and Creation',['../index.html#autotoc_md38',1,'']]],
-  ['findnestlocation_7',['FindNestLocation',['../classOsmia__Female.html#afcc85ca79215d64ace48e6a674e3ade2',1,'Osmia_Female::FindNestLocation(void)'],['../classOsmia__Female.html#afcc85ca79215d64ace48e6a674e3ade2',1,'Osmia_Female::FindNestLocation(void)']]],
-  ['finer_20temporal_20resolution_8',['8.1.2 Daily vs. Finer Temporal Resolution',['../index.html#autotoc_md87',1,'']]],
-  ['for_20standard_20analyses_9',['7.4.2 R Scripts for Standard Analyses',['../index.html#autotoc_md82',1,'']]],
-  ['forage_10',['Forage',['../classOsmia__Female.html#a1ee30431d966ead03629bbca153e297c',1,'Osmia_Female::Forage(void)'],['../classOsmia__Female.html#a1ee30431d966ead03629bbca153e297c',1,'Osmia_Female::Forage(void)']]],
-  ['foraging_20behaviour_20parameterization_11',['8.3.3 Foraging Behaviour Parameterization',['../index.html#autotoc_md96',1,'']]],
-  ['foraging_20range_20and_20resource_20assessment_12',['4.3.1 Foraging Range and Resource Assessment',['../index.html#autotoc_md42',1,'']]],
-  ['format_13',['Format',['../index.html#autotoc_md62',1,'6.2.1 ALMaSS Landscape Format'],['../index.html#autotoc_md63',1,'6.2.2 Pollen Map Format']]],
-  ['format_20specifications_14',['6.2 Data Format Specifications',['../index.html#autotoc_md61',1,'']]],
-  ['formats_20and_20naming_15',['7.2 Output File Formats and Naming',['../index.html#autotoc_md73',1,'']]],
-  ['framework_16',['1.2 The MIDox Framework',['../index.html#autotoc_md5',1,'']]],
-  ['from_20field_20surveys_17',['6.3.1 Creating Pollen Maps from Field Surveys',['../index.html#autotoc_md65',1,'']]],
-  ['future_20development_20priorities_18',['8.4 Future Development Priorities',['../index.html#autotoc_md97',1,'']]]
+  ['eggsexratiovsagelogisticcurvedata_0',['eggsexratiovsagelogisticcurvedata',['../Osmia__Population__Manager__dox_8h.html#a3a5f04e7fb3c4a1c1b4b2237fa08d29d',1,'Osmia_Population_Manager_dox.h']]],
+  ['emergent_20properties_1',['Emergent Properties',['../index.html#autotoc_md18',1,'2.4 Key Processes and Emergent Properties'],['../index.html#autotoc_md20',1,'2.4.2 Emergent Properties']]],
+  ['enabled_2',['7.2.2 Validation Outputs (if testing mode enabled)',['../index.html#autotoc_md75',1,'']]],
+  ['end_20of_20day_20processing_3',['Phase 4: DoLast() - End-of-Day Processing',['../index.html#autotoc_md27',1,'']]],
+  ['endstep_4',['EndStep',['../classOsmia__Base.html#a585cadf29b78bb8ae04c394e46c159d8',1,'Osmia_Base']]],
+  ['engineering_20and_20maintenance_5',['8.5 Software Engineering and Maintenance',['../index.html#autotoc_md101',1,'']]],
+  ['enhancements_201_202_20years_6',['8.4.1 Short-Term Enhancements (1-2 years)',['../index.html#autotoc_md98',1,'']]],
+  ['environmental_20parameters_7',['5.6 Environmental Parameters',['../index.html#autotoc_md51',1,'']]],
+  ['environmental_20updates_8',['Phase 1: DoFirst() - Environmental Updates',['../index.html#autotoc_md24',1,'']]],
+  ['execution_20sequence_9',['3.1 Daily Execution Sequence',['../index.html#autotoc_md23',1,'']]],
+  ['extensions_203_205_20years_10',['8.4.2 Medium-Term Extensions (3-5 years)',['../index.html#autotoc_md99',1,'']]]
 ];

@@ -43,7 +43,9 @@ var NAVTREE =
         [ "Functions", "globals_func.html", null ],
         [ "Variables", "globals_vars.html", null ],
         [ "Typedefs", "globals_type.html", null ],
-        [ "Enumerations", "globals_enum.html", null ]
+        [ "Enumerations", "globals_enum.html", null ],
+        [ "Enumerator", "globals_eval.html", null ],
+        [ "Macros", "globals_defs.html", null ]
       ] ]
     ] ]
   ] ]
@@ -52,8 +54,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Osmia__Population__Manager__dox_8cpp.html",
-"classOsmia__Female.html#aaf275e8e5a3e33b500f8c31d8c66aa57",
-"index.html#autotoc_md96"
+"classOsmia__Base.html#a6c41de38acd826087775785dd98a1de8",
+"functions.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronization';
