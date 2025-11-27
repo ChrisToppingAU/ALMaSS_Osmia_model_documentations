@@ -1,0 +1,7 @@
+<map id="Osmia_Egg::st_Develop" name="Osmia_Egg::st_Develop">
+<area shape="rect" id="Node000001" title="Development state &#45; accumulate degree&#45;days toward hatching." alt="" coords="5,42,181,67"/>
+<area shape="rect" id="Node000002" href="$Osmia__dox_8cpp.html#a7d4c0ef3a5264a2bb6a3c85fc0df6cb0" title=" " alt="" coords="229,5,448,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,42,215,37,216,43,182,47"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Egg.html#aab1ad8be14870a48b1f4a93617794ead" title="Daily mortality test for eggs." alt="" coords="241,70,437,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="182,62,227,67,227,73,181,67"/>
+</map>

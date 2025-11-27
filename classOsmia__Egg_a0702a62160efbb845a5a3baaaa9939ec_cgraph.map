@@ -1,0 +1,11 @@
+<map id="Osmia_Egg::ReInit" name="Osmia_Egg::ReInit">
+<area shape="rect" id="Node000001" title="Reinitialize egg object from object pool." alt="" coords="5,55,147,80"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Base.html#a1c434e589e5e6c52b6bf553168be1f8e" title="Reinitialize object from object pool." alt="" coords="195,55,344,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="147,65,181,65,181,70,147,70"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Base.html#ab805efa2ecde9c8a216beb3cb9ff3210" title="Set individual&#39;s age in days." alt="" coords="415,5,572,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="327,52,421,31,422,36,328,57"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Base.html#af53bc60e887dc515f85388f91eae324f" title="Set individual&#39;s mass (mg)" alt="" coords="410,55,577,80"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="344,65,396,65,396,70,344,70"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Base.html#a36da7070a00889ab678dc903ba71a704" title="Set parasitism status." alt="" coords="392,104,595,129"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="328,77,422,98,421,104,327,83"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="Osmia_Pupa::st_Emerge" name="Osmia_Pupa::st_Emerge">
+<area shape="rect" id="Node000001" title="Transition state &#45; eclosion from pupa to adult&#45;in&#45;cocoon." alt="" coords="193,5,373,31"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Pupa.html#a8a1b2fe8e6267095aed3ac8e30de12f1" title="Main step function." alt="" coords="5,5,145,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,21,146,21,146,15,180,15"/>
+</map>

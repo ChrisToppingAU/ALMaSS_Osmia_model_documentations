@@ -1,0 +1,7 @@
+<map id="Osmia_Population_Manager::GetPrePupalDevelDays" name="Osmia_Population_Manager::GetPrePupalDevelDays">
+<area shape="rect" id="Node000001" title="Get today&#39;s prepupal development increment." alt="" coords="468,5,672,45"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Prepupa.html#a2c59e8c42d372605674ada9df18f92e6" title="Development state &#45; time&#45;based progression toward pupation." alt="" coords="215,13,420,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="454,28,420,28,420,23,454,23"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Prepupa.html#a42264a39b4d4ba54b18a473dab357e94" title="Main step function." alt="" coords="5,13,167,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="201,28,167,28,167,23,201,23"/>
+</map>

@@ -1,0 +1,17 @@
+<map id="Osmia_Prepupa::Osmia_Prepupa" name="Osmia_Prepupa::Osmia_Prepupa">
+<area shape="rect" id="Node000001" title="Constructor transferring from larva to prepupa." alt="" coords="5,47,180,87"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Prepupa.html#a4a83e8226eb56046515b9a293fb17088" title="Reinitialize prepupa from object pool." alt="" coords="228,55,399,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="180,65,215,65,215,70,180,70"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Larva.html#a6c439f6701801ae5b7ea7a591744cf42" title="Reinitialize larva object from object pool." alt="" coords="447,55,600,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="399,65,433,65,433,70,399,70"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Egg.html#a0702a62160efbb845a5a3baaaa9939ec" title="Reinitialize egg object from object pool." alt="" coords="648,55,789,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="600,65,634,65,634,70,600,70"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Base.html#a1c434e589e5e6c52b6bf553168be1f8e" title="Reinitialize object from object pool." alt="" coords="837,55,987,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="789,65,824,65,824,70,789,70"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Base.html#ab805efa2ecde9c8a216beb3cb9ff3210" title="Set individual&#39;s age in days." alt="" coords="1057,5,1215,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="970,52,1064,31,1065,36,971,57"/>
+<area shape="rect" id="Node000007" href="$classOsmia__Base.html#af53bc60e887dc515f85388f91eae324f" title="Set individual&#39;s mass (mg)" alt="" coords="1053,55,1219,80"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="987,65,1039,65,1039,70,987,70"/>
+<area shape="rect" id="Node000008" href="$classOsmia__Base.html#a36da7070a00889ab678dc903ba71a704" title="Set parasitism status." alt="" coords="1035,104,1237,129"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="971,77,1065,98,1064,104,970,83"/>
+</map>

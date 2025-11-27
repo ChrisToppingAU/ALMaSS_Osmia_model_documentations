@@ -1,0 +1,15 @@
+<map id="Osmia_Population_Manager::Osmia_Population_Manager" name="Osmia_Population_Manager::Osmia_Population_Manager">
+<area shape="rect" id="Node000001" title="Constructor initializing population manager." alt="" coords="5,152,217,192"/>
+<area shape="rect" id="Node000002" href="$Osmia__Population__Manager__dox_8cpp.html#a23f7c59b353b1b840451e8f267b18ef8" title=" " alt="" coords="271,5,483,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="133,150,189,103,226,77,264,55,280,48,282,53,267,60,229,82,193,107,136,154"/>
+<area shape="rect" id="Node000003" href="$Osmia__Population__Manager__dox_8cpp.html#a5a914edec9a4029ee668603263ac69f4" title=" " alt="" coords="271,69,482,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="170,149,265,119,291,111,293,116,266,124,172,155"/>
+<area shape="rect" id="Node000004" href="$Osmia__Population__Manager__dox_8cpp.html#a18c10d18f0bdc45ef48454da194aa6eb" title=" " alt="" coords="265,134,488,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,159,251,156,252,161,218,165"/>
+<area shape="rect" id="Node000005" href="$Osmia__Population__Manager__dox_8cpp.html#a95e8b7c7685b979f86398d45583dd003" title=" " alt="" coords="307,183,447,209"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="218,179,293,186,293,191,217,184"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Population__Manager.html#add181bfe760f2450d8834b8fcaf96d3a" title="Create new nest at specified location." alt="" coords="275,233,479,273"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="177,190,266,217,296,227,295,232,265,223,175,195"/>
+<area shape="rect" id="Node000007" href="$classOsmia__Population__Manager.html#a64e4f851baf4664844d2410f54481db3" title="Check if polygon suitable for Osmia nesting." alt="" coords="275,297,479,337"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="136,190,193,236,229,261,267,283,282,290,280,295,264,288,226,266,190,241,133,194"/>
+</map>

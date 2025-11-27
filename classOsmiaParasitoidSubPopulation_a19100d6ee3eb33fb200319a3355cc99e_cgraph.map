@@ -1,0 +1,9 @@
+<map id="OsmiaParasitoidSubPopulation::DoFirst" name="OsmiaParasitoidSubPopulation::DoFirst">
+<area shape="rect" id="Node000001" title="Main daily update orchestrating sub&#45;population processes." alt="" coords="5,69,227,109"/>
+<area shape="rect" id="Node000002" href="$classOsmiaParasitoidSubPopulation.html#af0927d6e6446ca74d9aa09ae28939516" title="Apply daily mortality." alt="" coords="275,5,496,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="200,67,287,46,288,51,202,72"/>
+<area shape="rect" id="Node000003" href="$classOsmiaParasitoidSubPopulation.html#a037bc346862c179f7b7caedb91385c37" title="Execute dispersal to neighbouring cells." alt="" coords="275,69,496,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="227,87,261,87,261,92,227,92"/>
+<area shape="rect" id="Node000004" href="$classOsmiaParasitoidSubPopulation.html#a8a299a8a5375a502f48597489e6aa88f" title="Execute reproduction based on local host density." alt="" coords="275,133,496,173"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="202,107,288,128,287,133,200,112"/>
+</map>

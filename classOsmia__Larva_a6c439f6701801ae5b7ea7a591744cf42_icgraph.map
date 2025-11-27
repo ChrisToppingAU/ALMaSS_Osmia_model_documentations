@@ -1,0 +1,17 @@
+<map id="Osmia_Larva::ReInit" name="Osmia_Larva::ReInit">
+<area shape="rect" id="Node000001" title="Reinitialize larva object from object pool." alt="" coords="916,42,1069,67"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Larva.html#ad3bef3ed9fad155f1c5e0966ee132cf7" title="Constructor for new larva (created during egg hatching)" alt="" coords="704,5,861,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="902,45,861,39,862,34,903,39"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Prepupa.html#a4a83e8226eb56046515b9a293fb17088" title="Reinitialize prepupa from object pool." alt="" coords="697,70,868,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="903,69,869,74,868,69,902,64"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Prepupa.html#a76f75dba719863e12d956a25e1f37e1c" title="Constructor transferring from larva to prepupa." alt="" coords="475,33,649,73"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="683,72,649,68,650,62,684,67"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Pupa.html#a6a8e9a88edb6b69402c015a8aab66ed8" title="Reinitialize pupa from object pool." alt="" coords="487,98,637,123"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="684,98,637,104,636,99,683,93"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Pupa.html#a97279db6c8335438d1dff2e516602cbf" title="Constructor transferring from prepupa." alt="" coords="235,73,427,98"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="473,104,426,98,427,93,474,98"/>
+<area shape="rect" id="Node000007" href="$classOsmia__InCocoon.html#affe3ed7a1b2bb44323d325353350bd42" title="Reinitialize object from pool." alt="" coords="242,122,419,147"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="474,122,420,128,419,123,473,117"/>
+<area shape="rect" id="Node000008" href="$classOsmia__InCocoon.html#adfcfa1f4f00c912840b61570a8aa3812" title="Constructor for newly eclosed adult in cocoon." alt="" coords="5,115,187,155"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="228,137,187,137,187,132,228,132"/>
+</map>

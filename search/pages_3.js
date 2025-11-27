@@ -1,0 +1,4 @@
+var searchData=
+[
+  ['implementation_20documentation_0',['&lt;em&gt;Osmia bicornis&lt;/em&gt; Population Model: MIDox Implementation Documentation',['../index.html',1,'']]]
+];

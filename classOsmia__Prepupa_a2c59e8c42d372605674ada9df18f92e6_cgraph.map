@@ -1,0 +1,7 @@
+<map id="Osmia_Prepupa::st_Develop" name="Osmia_Prepupa::st_Develop">
+<area shape="rect" id="Node000001" title="Development state &#45; time&#45;based progression toward pupation." alt="" coords="5,35,211,60"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Prepupa.html#a61b24bc6d4845af3f7e0d2210e23af1f" title="Daily mortality test for prepupae." alt="" coords="259,5,484,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="211,33,245,29,245,35,211,39"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Population__Manager.html#a39293145ad4e75b9e49069b9c5107391" title="Get today&#39;s prepupal development increment." alt="" coords="269,55,473,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="211,56,256,60,255,66,211,61"/>
+</map>

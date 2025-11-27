@@ -1,0 +1,5 @@
+<map id="OsmiaParasitoidSubPopulation::DailyMortality" name="OsmiaParasitoidSubPopulation::DailyMortality">
+<area shape="rect" id="Node000001" title="Apply daily mortality." alt="" coords="275,5,496,45"/>
+<area shape="rect" id="Node000002" href="$classOsmiaParasitoidSubPopulation.html#a19100d6ee3eb33fb200319a3355cc99e" title="Main daily update orchestrating sub&#45;population processes." alt="" coords="5,5,227,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="261,28,227,28,227,23,261,23"/>
+</map>

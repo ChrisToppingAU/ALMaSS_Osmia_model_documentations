@@ -1,0 +1,17 @@
+<map id="Osmia_Pupa::ReInit" name="Osmia_Pupa::ReInit">
+<area shape="rect" id="Node000001" title="Reinitialize pupa from object pool." alt="" coords="5,55,155,80"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Prepupa.html#a4a83e8226eb56046515b9a293fb17088" title="Reinitialize prepupa from object pool." alt="" coords="203,55,373,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="155,65,189,65,189,70,155,70"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Larva.html#a6c439f6701801ae5b7ea7a591744cf42" title="Reinitialize larva object from object pool." alt="" coords="421,55,575,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="374,65,408,65,408,70,374,70"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Egg.html#a0702a62160efbb845a5a3baaaa9939ec" title="Reinitialize egg object from object pool." alt="" coords="623,55,764,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="575,65,609,65,609,70,575,70"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Base.html#a1c434e589e5e6c52b6bf553168be1f8e" title="Reinitialize object from object pool." alt="" coords="812,55,961,80"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="764,65,798,65,798,70,764,70"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Base.html#ab805efa2ecde9c8a216beb3cb9ff3210" title="Set individual&#39;s age in days." alt="" coords="1032,5,1189,31"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="944,52,1038,31,1040,36,946,57"/>
+<area shape="rect" id="Node000007" href="$classOsmia__Base.html#af53bc60e887dc515f85388f91eae324f" title="Set individual&#39;s mass (mg)" alt="" coords="1027,55,1194,80"/>
+<area shape="poly" id="edge6_Node000005_Node000007" title=" " alt="" coords="962,65,1013,65,1013,70,962,70"/>
+<area shape="rect" id="Node000008" href="$classOsmia__Base.html#a36da7070a00889ab678dc903ba71a704" title="Set parasitism status." alt="" coords="1009,104,1212,129"/>
+<area shape="poly" id="edge7_Node000005_Node000008" title=" " alt="" coords="946,77,1040,98,1038,104,944,83"/>
+</map>

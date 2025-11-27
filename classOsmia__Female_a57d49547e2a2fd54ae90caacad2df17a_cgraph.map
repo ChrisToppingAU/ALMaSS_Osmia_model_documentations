@@ -1,0 +1,5 @@
+<map id="Osmia_Female::CalculateEggLoad" name="Osmia_Female::CalculateEggLoad">
+<area shape="rect" id="Node000001" title="Calculate total lifetime egg load from body mass." alt="" coords="5,5,248,31"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Female.html#afb7cb396b33201c4733f2465bc172f1d" title="Calculate planned eggs for next nest." alt="" coords="296,5,533,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="248,15,282,15,282,21,248,21"/>
+</map>
