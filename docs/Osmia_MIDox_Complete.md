@@ -1,6 +1,6 @@
 # *Osmia bicornis* Population Model: MIDox Implementation Documentation
 
-**Authors: Christopher John Topping, Xiaodong Dua, Elzbieta Ziolkowska**
+**Authors: Christopher John Topping, Xiaodong Duan, Elzbieta Ziolkowska**
 
 ## Abstract
 
@@ -40,7 +40,7 @@ This MIDox documentation is the second in a three-paper sequence:
 
 1. **Formal Model** (Ziółkowska et al. 2025, Food and Ecological Systems Modelling Journal): Conceptual specification using mathematical notation and structured natural language, describing model purpose, scope, entities, processes, and equations without implementation details
 
-2. **MIDox Implementation** (this document): Complete technical specification of the working model, documenting all classes, methods, parameters, and design decisions with biological justification
+2. **MIDox Implementation** (FESMJ article ref): Complete technical specification of the working model, documenting all classes, methods, parameters, and design decisions with biological justification
 
 3. **Testing and Calibration** (in preparation): Validation against empirical data, sensitivity analyses, and parameter estimation procedures
 
@@ -115,7 +115,7 @@ The @ref Osmia_Population_Manager orchestrates the simulation, handling:
 - **Spatial infrastructure**: Maintaining density grids, nest management, resource maps
 - **Global calculations**: Weather integration (foraging hours), seasonal transitions (overwintering triggers)
 
-The population manager follows the ALMaSS framework's standard Population_Manager pattern, providing *Osmia*-specific implementations of core scheduling hooks (DoFirst, DoBefore, DoAfter, DoLast) whilst delegating agent behaviour to individual classes.
+The population manager follows the ALMaSS framework's standard Population_Manager pattern, providing *Osmia*-specific implementations of core scheduling hooks (@ref DoFirst(), @ref DoBefore(), @ref DoAfter(), @ref DoLast()) whilst delegating agent behaviour to individual classes.
 
 #### 2.2.3 Nest Management
 
@@ -217,7 +217,7 @@ These uncertainties are explicitly documented in parameter descriptions (Section
 
 The model executes with daily time steps following the ALMaSS framework's standardized scheduling pattern. Each day proceeds through four phases coordinated by the @ref Osmia_Population_Manager:
 
-#### Phase 1: DoFirst() - Environmental Updates
+#### Phase 1: @ref DoFirst() - Environmental Updates
 
 ```
 FOR each day:
@@ -241,22 +241,22 @@ FOR each day:
     // Update nest manager status
     nest_manager.UpdateOsmiaNesting()  // Check for abandoned nests
     
-    // Clear density grid (will be repopulated during BeginStep)
+    // Clear density grid (will be repopulated during @ref BeginStep())
     FOR each grid_cell:
         grid_cell.female_count = 0
 ```
 
 This phase sets up shared environmental state that all agents will access during their individual updates. Calculations performed once per day rather than per agent yields substantial computational savings (O(1) vs. O(N) operations).
 
-#### Phase 2: Individual BeginStep() - Agent Pre-Processing
+#### Phase 2: Individual @ref BeginStep() - Agent Pre-Processing
 
 ```
 FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:
     FOR each individual IN life_stage:
-        individual.BeginStep()
+        individual.@ref BeginStep()
 ```
 
-Stage-specific BeginStep() implementations prepare agents for daily updates:
+Stage-specific @ref BeginStep() implementations prepare agents for daily updates:
 
 **Egg/Larva/Prepupa/Pupa**: Check for completion of development
 ```
@@ -284,12 +284,12 @@ Update local resource availability if needed
 Update density grid: grid[location].female_count++
 ```
 
-#### Phase 3: Individual Step() - Main Agent Actions
+#### Phase 3: Individual @ref Step() - Main Agent Actions
 
 ```
 FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:
     FOR each individual IN life_stage:
-        individual.Step()
+        individual.@ref Step()
 ```
 
 This phase implements stage-specific behaviour. For developmental stages (Egg through InCocoon), Step() applies mortality and signals transitions. For @ref Osmia_Female, Step() executes the behavioural state machine:
@@ -338,7 +338,7 @@ WHILE state != DONE:
 
 The state machine architecture separates concerns: each state handles a distinct behavioural mode, transitions occur based on clear criteria, and the loop terminates when reaching DONE or DIE states.
 
-#### Phase 4: DoLast() - End-of-Day Processing
+#### Phase 4: @ref DoLast() - End-of-Day Processing
 
 ```
 // Update seasonal flags based on temperature history
@@ -383,7 +383,7 @@ The model supports parallel execution using OpenMP:
 ```cpp
 #pragma omp parallel
 FOR each individual IN population:
-    individual.Step()
+    individual.@ref Step()
 ```
 
 Thread safety ensured through:
@@ -1669,16 +1669,16 @@ Stillman RA, Railsback SF, Giske J, Berger U, Grimm V (2015). Making predictions
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| @ref Osmia_Base | Common attributes/methods for all life stages | GetTemp(), SetTemp(), CheckMortality() |
-| @ref Osmia_Egg | Egg development and hatching | Step(), TransitionToLarva() |
-| @ref Osmia_Larva | Larval feeding and cocoon construction | Step(), TransitionToPrepupa() |
-| @ref Osmia_Prepupa | Summer diapause | Step(), TransitionToPupa() |
-| @ref Osmia_Pupa | Metamorphosis to adult | Step(), TransitionToInCocoon() |
-| @ref Osmia_InCocoon | Overwintering adult in cocoon | Step(), Emerge() |
-| @ref Osmia_Female | Reproductive behaviour | Step(), FindNest(), Forage(), LayEgg() |
-| @ref Osmia_Population_Manager | Simulation orchestration | Init(), DoFirst(), CreateObjects() |
-| @ref Osmia_Nest_Manager | Nest availability tracking | UpdateOsmiaNesting(), IsNestPossible() |
-| @ref Osmia_Nest | Individual nest structure | AddEgg(), AddCocoon(), CloseNest() |
+| @ref Osmia_Base | Common attributes/methods for all life stages | @ref GetTemp(), @ref SetTemp(), @ref CheckMortality() |
+| @ref Osmia_Egg | Egg development and hatching | @ref Step(), @ref TransitionToLarva() |
+| @ref Osmia_Larva | Larval feeding and cocoon construction | @ref Step(), @ref TransitionToPrepupa() |
+| @ref Osmia_Prepupa | Summer diapause | @ref Step(), @ref TransitionToPupa() |
+| @ref Osmia_Pupa | Metamorphosis to adult | @ref Step(), @ref TransitionToInCocoon() |
+| @ref Osmia_InCocoon | Overwintering adult in cocoon | @ref Step(), @ref Emerge() |
+| @ref Osmia_Female | Reproductive behaviour | @ref Step(), @ref FindNest(), @ref Forage(), @ref LayEgg() |
+| @ref Osmia_Population_Manager | Simulation orchestration | @ref Init(), @ref DoFirst(), @ref CreateObjects() |
+| @ref Osmia_Nest_Manager | Nest availability tracking | @ref UpdateOsmiaNesting(), @ref IsNestPossible() |
+| @ref Osmia_Nest | Individual nest structure | @ref AddEgg(), @ref AddCocoon(), @ref CloseNest() |
 
 ### Configuration File Structure
 
