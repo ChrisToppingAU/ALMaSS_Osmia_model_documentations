@@ -38,7 +38,7 @@ Together, these elements create a complete audit trail from formal model through
 
 This MIDox documentation is the second in a three-paper sequence:
 
-1. **Formal Model** (Ziółkowska et al. 2025, Food and Ecological Systems Modelling Journal): Conceptual specification using mathematical notation and structured natural language, describing model purpose, scope, entities, processes, and equations without implementation details
+1. **Formal Model** (Ziółkowska et al. 2023, Food and Ecological Systems Modelling Journal): Conceptual specification using mathematical notation and structured natural language, describing model purpose, scope, entities, processes, and equations without implementation details
 
 2. **MIDox Implementation** (FESMJ article ref): Complete technical specification of the working model, documenting all classes, methods, parameters, and design decisions with biological justification
 
@@ -705,23 +705,23 @@ All parameters are defined as configuration variables in the C++ source code (se
 
 | Parameter | Default | Units | Source | Confidence | Description |
 |-----------|---------|-------|--------|------------|-------------|
-| **Egg Stage** |
+| **Egg Stage** ||||||
 | EGG_DEVEL_THRESHOLD | 0.0 | °C | Calibrated | LOW | Lower developmental threshold. **Differs from formal model** (13.8°C laboratory value; see Section 8.3) |
 | EGG_DEVEL_TOTAL_DD | 86 | DD | Calibrated | MEDIUM | Degree-days required for hatching. Adjusted from Radmacher & Strohm (2011) |
 | EGG_DAILY_MORT | 0.0014 | day⁻¹ | Radmacher & Strohm (2011) | HIGH | Daily mortality probability during egg development |
-| **Larval Stage** |
+| **Larval Stage** ||||||
 | LARVA_DEVEL_THRESHOLD | 13.8 | °C | Radmacher & Strohm (2011) | HIGH | Lower developmental threshold from laboratory studies |
 | LARVA_DEVEL_TOTAL_DD | 240 | DD | Radmacher & Strohm (2011) | HIGH | Degree-days for larval development and cocoon construction |
 | LARVA_DAILY_MORT | 0.0014 | day⁻¹ | Radmacher & Strohm (2011) | HIGH | Daily mortality probability during larval feeding |
-| **Prepupal Stage** |
+| **Prepupal Stage** ||||||
 | PREPUPA_DEVEL_TOTAL_DAYS | 45 | days | Calibrated | LOW | Approximate duration of summer diapause. See Section 8.3 for discussion of temperature dependence |
 | PREPUPA_DEVEL_RATES | [array] | day⁻¹ | Calibrated | LOW | Temperature-specific development rates (0-41°C). Empirically derived from field phenology |
 | PREPUPA_DAILY_MORT | 0.003 | day⁻¹ | Radmacher & Strohm (2011) | MEDIUM | Daily mortality during diapause |
-| **Pupal Stage** |
+| **Pupal Stage** ||||||
 | PUPA_DEVEL_THRESHOLD | 1.1 | °C | Calibrated | MEDIUM | Lower developmental threshold. **Differs from formal model** (13.2°C laboratory; see Section 8.3) |
 | PUPA_DEVEL_TOTAL_DD | 570 | DD | Calibrated | MEDIUM | Degree-days for metamorphosis. Adjusted from literature |
 | PUPA_DAILY_MORT | 0.003 | day⁻¹ | Radmacher & Strohm (2011) | MEDIUM | Daily mortality during pupation |
-| **Overwintering** |
+| **Overwintering** ||||||
 | OVERWINTER_THRESHOLD | 5.0 | °C | Sgolastra et al. (2011) | MEDIUM | Temperature below which chilling accumulates |
 | OVERWINTER_REQUIRED_DD | 400-500 | DD | Sgolastra et al. (2011) | MEDIUM | Chilling requirement for spring emergence |
 | PREWINTER_THRESHOLD | 13.0 | °C | Calibrated | LOW | Temperature triggering onset of overwintering physiology |
@@ -764,11 +764,11 @@ Equation from *Osmia lignaria* studies (Sgolastra et al. 2011), assumed applicab
 
 | Parameter | Default | Units | Source | Confidence | Description |
 |-----------|---------|-------|--------|------------|-------------|
-| **Resource Conversion** |
+| **Resource Conversion** ||||||
 | COCOON_TO_PROVISION_MASS | 3.247 | - | Seidelmann (2006) | HIGH | Ratio converting provision mass to cocoon mass (31% conversion efficiency) |
 | PROVISION_TO_COCOON_MASS | 0.308 | - | Seidelmann (2006) | HIGH | Inverse ratio (cocoon to provision) |
 | POLLEN_SCORE_TO_MG | 0.8 | mg·score⁻¹ | Calibrated | MEDIUM | Conversion from landscape pollen availability score to actual mg collectible |
-| **Provisioning Behavior** |
+| **Provisioning Behavior** ||||||
 | MIN_EGGS_PER_NEST | 3 | eggs | Ivanov (2006) | HIGH | Minimum planned eggs per nest |
 | MAX_EGGS_PER_NEST | 30 | eggs | Ivanov (2006) | HIGH | Maximum planned eggs per nest |
 | MALE_MIN_TARGET_PROVISION | 10.0 | mg | Seidelmann et al. (2010) | HIGH | Minimum provision mass for male cells |
@@ -776,7 +776,7 @@ Equation from *Osmia lignaria* studies (Sgolastra et al. 2011), assumed applicab
 | MIN_CELL_CONSTRUCTION_TIME | 1 | days | Field observations | HIGH | Minimum time to provision one cell under ideal conditions |
 | MAX_CELL_CONSTRUCTION_TIME | 4 | days | Seidelmann (2006) | HIGH | Maximum time before abandoning cell (parasitism risk threshold) |
 | LIFETIME_COCOON_MASS_LOSS | 30.0 | mg | Seidelmann et al. (2010) | MEDIUM | Total decline in provision mass from first to last offspring |
-| **Sex Allocation** |
+| **Sex Allocation** ||||||
 | SEX_RATIO_VS_AGE_LOGISTIC | [4 params] | - | Seidelmann et al. (2010) | HIGH | Logistic equation parameters for age-dependent sex ratio |
 | SEX_RATIO_VS_MASS_LINEAR | [2 params] | - | Seidelmann et al. (2010) | HIGH | Linear relationship between maternal mass and sex ratio adjustment |
 | FEMALE_COCOON_MASS_VS_AGE | [4 params] | - | Seidelmann et al. (2010) | HIGH | Logistic equation for age-dependent female offspring mass |
@@ -1603,7 +1603,7 @@ For compilation instructions, system requirements (compiler versions, dependenci
 
 **Citation:** When using this model in research publications, please cite both the formal model paper and this MIDox documentation:
 
-> Ziółkowska E, Topping CJ, Björklund Rahm M, Klein A-M (2025). The Formal Model for the solitary bee *Osmia bicornis* L. agent-based model. Food and Ecological Systems Modelling Journal, 102102. https://doi.org/10.1016/j.fesm.2024.100102
+> Ziółkowska E, Bednarska AJ, Laskowski R, Topping CJ (2023). The Formal Model for the solitary bee *Osmia bicornis* L. agent-based model. Food and Ecological Systems Modelling Journal 4: e102102. https://doi.org/10.3897/fmj.4.102102
 
 > [AUTHOR NAMES TO BE ADDED] (2025). *Osmia bicornis* Population Model: MIDox Implementation Documentation. Food and Ecological Systems Modelling Journal [Volume TBD]. DOI: [TBD]
 
@@ -1613,7 +1613,7 @@ For compilation instructions, system requirements (compiler versions, dependenci
 
 **Core Model Development and Formal Specification**
 
-Ziółkowska E, Topping CJ, Björklund Rahm M, Klein A-M (2025). The Formal Model for the solitary bee *Osmia bicornis* L. agent-based model. Food and Ecological Systems Modelling Journal, 102102. https://doi.org/10.1016/j.fesm.2024.100102
+Ziółkowska E, Bednarska AJ, Laskowski R, Topping CJ (2023). The Formal Model for the solitary bee *Osmia bicornis* L. agent-based model. Food and Ecological Systems Modelling Journal 4: e102102. https://doi.org/10.3897/fmj.4.102102
 
 **Empirical Biology and Parameterization**
 

@@ -131,7 +131,7 @@ Abstract</h1>
 1.3 Three-Paper Publication Sequence</h2>
 <p>This MIDox documentation is the second in a three-paper sequence:</p>
 <ol type="1">
-<li><b>Formal Model</b> (Ziółkowska et al. 2025, Food and Ecological Systems Modelling Journal): Conceptual specification using mathematical notation and structured natural language, describing model purpose, scope, entities, processes, and equations without implementation details</li>
+<li><b>Formal Model</b> (Ziółkowska et al. 2023, Food and Ecological Systems Modelling Journal): Conceptual specification using mathematical notation and structured natural language, describing model purpose, scope, entities, processes, and equations without implementation details</li>
 <li><b>MIDox Implementation</b> (FESMJ article ref): Complete technical specification of the working model, documenting all classes, methods, parameters, and design decisions with biological justification</li>
 <li><b>Testing and Calibration</b> (in preparation): Validation against empirical data, sensitivity analyses, and parameter estimation procedures</li>
 </ol>
@@ -594,7 +594,54 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <p>All parameters are defined as configuration variables in the C++ source code (see Osmia.cpp and <a class="el" href="classOsmia__Population__Manager.html">Osmia_Population_Manager</a>.cpp), allowing modification without recompilation. Default values reflect either direct empirical measurements or calibrated values matching observed population dynamics.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md47"></a>
 5.2 Development Parameters</h2>
-<p>| Parameter | Default | Units | Source | Confidence | Description | |--------&mdash;|------&mdash;|----&mdash;|-----&mdash;|---------&mdash;|----------&mdash;| | <b>Egg Stage</b> | | EGG_DEVEL_THRESHOLD | 0.0 | °C | Calibrated | LOW | Lower developmental threshold. <b>Differs from formal model</b> (13.8°C laboratory value; see Section 8.3) | | EGG_DEVEL_TOTAL_DD | 86 | DD | Calibrated | MEDIUM | Degree-days required for hatching. Adjusted from Radmacher &amp; Strohm (2011) | | EGG_DAILY_MORT | 0.0014 | day⁻¹ | Radmacher &amp; Strohm (2011) | HIGH | Daily mortality probability during egg development | | <b>Larval Stage</b> | | LARVA_DEVEL_THRESHOLD | 13.8 | °C | Radmacher &amp; Strohm (2011) | HIGH | Lower developmental threshold from laboratory studies | | LARVA_DEVEL_TOTAL_DD | 240 | DD | Radmacher &amp; Strohm (2011) | HIGH | Degree-days for larval development and cocoon construction | | LARVA_DAILY_MORT | 0.0014 | day⁻¹ | Radmacher &amp; Strohm (2011) | HIGH | Daily mortality probability during larval feeding | | <b>Prepupal Stage</b> | | PREPUPA_DEVEL_TOTAL_DAYS | 45 | days | Calibrated | LOW | Approximate duration of summer diapause. See Section 8.3 for discussion of temperature dependence | | PREPUPA_DEVEL_RATES | [array] | day⁻¹ | Calibrated | LOW | Temperature-specific development rates (0-41°C). Empirically derived from field phenology | | PREPUPA_DAILY_MORT | 0.003 | day⁻¹ | Radmacher &amp; Strohm (2011) | MEDIUM | Daily mortality during diapause | | <b>Pupal Stage</b> | | PUPA_DEVEL_THRESHOLD | 1.1 | °C | Calibrated | MEDIUM | Lower developmental threshold. <b>Differs from formal model</b> (13.2°C laboratory; see Section 8.3) | | PUPA_DEVEL_TOTAL_DD | 570 | DD | Calibrated | MEDIUM | Degree-days for metamorphosis. Adjusted from literature | | PUPA_DAILY_MORT | 0.003 | day⁻¹ | Radmacher &amp; Strohm (2011) | MEDIUM | Daily mortality during pupation | | <b>Overwintering</b> | | OVERWINTER_THRESHOLD | 5.0 | °C | Sgolastra et al. (2011) | MEDIUM | Temperature below which chilling accumulates | | OVERWINTER_REQUIRED_DD | 400-500 | DD | Sgolastra et al. (2011) | MEDIUM | Chilling requirement for spring emergence | | PREWINTER_THRESHOLD | 13.0 | °C | Calibrated | LOW | Temperature triggering onset of overwintering physiology | | EMERG_COUNT_CONST | [value] | - | Fitted | LOW | Intercept for emergence probability equation | | EMERG_COUNT_SLOPE | [value] | DD⁻¹ | Fitted | LOW | Slope for emergence probability vs. accumulated DD |</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter  </th><th class="markdownTableHeadNone">Default  </th><th class="markdownTableHeadNone">Units  </th><th class="markdownTableHeadNone">Source  </th><th class="markdownTableHeadNone">Confidence  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Egg Stage</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">EGG_DEVEL_THRESHOLD  </td><td class="markdownTableBodyNone">0.0  </td><td class="markdownTableBodyNone">°C  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">LOW  </td><td class="markdownTableBodyNone">Lower developmental threshold. <b>Differs from formal model</b> (13.8°C laboratory value; see Section 8.3)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">EGG_DEVEL_TOTAL_DD  </td><td class="markdownTableBodyNone">86  </td><td class="markdownTableBodyNone">DD  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Degree-days required for hatching. Adjusted from Radmacher &amp; Strohm (2011)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">EGG_DAILY_MORT  </td><td class="markdownTableBodyNone">0.0014  </td><td class="markdownTableBodyNone">day⁻¹  </td><td class="markdownTableBodyNone">Radmacher &amp; Strohm (2011)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Daily mortality probability during egg development  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Larval Stage</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">LARVA_DEVEL_THRESHOLD  </td><td class="markdownTableBodyNone">13.8  </td><td class="markdownTableBodyNone">°C  </td><td class="markdownTableBodyNone">Radmacher &amp; Strohm (2011)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Lower developmental threshold from laboratory studies  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">LARVA_DEVEL_TOTAL_DD  </td><td class="markdownTableBodyNone">240  </td><td class="markdownTableBodyNone">DD  </td><td class="markdownTableBodyNone">Radmacher &amp; Strohm (2011)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Degree-days for larval development and cocoon construction  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">LARVA_DAILY_MORT  </td><td class="markdownTableBodyNone">0.0014  </td><td class="markdownTableBodyNone">day⁻¹  </td><td class="markdownTableBodyNone">Radmacher &amp; Strohm (2011)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Daily mortality probability during larval feeding  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Prepupal Stage</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">PREPUPA_DEVEL_TOTAL_DAYS  </td><td class="markdownTableBodyNone">45  </td><td class="markdownTableBodyNone">days  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">LOW  </td><td class="markdownTableBodyNone">Approximate duration of summer diapause. See Section 8.3 for discussion of temperature dependence  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">PREPUPA_DEVEL_RATES  </td><td class="markdownTableBodyNone">[array]  </td><td class="markdownTableBodyNone">day⁻¹  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">LOW  </td><td class="markdownTableBodyNone">Temperature-specific development rates (0-41°C). Empirically derived from field phenology  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">PREPUPA_DAILY_MORT  </td><td class="markdownTableBodyNone">0.003  </td><td class="markdownTableBodyNone">day⁻¹  </td><td class="markdownTableBodyNone">Radmacher &amp; Strohm (2011)  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Daily mortality during diapause  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Pupal Stage</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">PUPA_DEVEL_THRESHOLD  </td><td class="markdownTableBodyNone">1.1  </td><td class="markdownTableBodyNone">°C  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Lower developmental threshold. <b>Differs from formal model</b> (13.2°C laboratory; see Section 8.3)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">PUPA_DEVEL_TOTAL_DD  </td><td class="markdownTableBodyNone">570  </td><td class="markdownTableBodyNone">DD  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Degree-days for metamorphosis. Adjusted from literature  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">PUPA_DAILY_MORT  </td><td class="markdownTableBodyNone">0.003  </td><td class="markdownTableBodyNone">day⁻¹  </td><td class="markdownTableBodyNone">Radmacher &amp; Strohm (2011)  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Daily mortality during pupation  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Overwintering</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">OVERWINTER_THRESHOLD  </td><td class="markdownTableBodyNone">5.0  </td><td class="markdownTableBodyNone">°C  </td><td class="markdownTableBodyNone">Sgolastra et al. (2011)  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Temperature below which chilling accumulates  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">OVERWINTER_REQUIRED_DD  </td><td class="markdownTableBodyNone">400-500  </td><td class="markdownTableBodyNone">DD  </td><td class="markdownTableBodyNone">Sgolastra et al. (2011)  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Chilling requirement for spring emergence  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">PREWINTER_THRESHOLD  </td><td class="markdownTableBodyNone">13.0  </td><td class="markdownTableBodyNone">°C  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">LOW  </td><td class="markdownTableBodyNone">Temperature triggering onset of overwintering physiology  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">EMERG_COUNT_CONST  </td><td class="markdownTableBodyNone">[value]  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">Fitted  </td><td class="markdownTableBodyNone">LOW  </td><td class="markdownTableBodyNone">Intercept for emergence probability equation  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">EMERG_COUNT_SLOPE  </td><td class="markdownTableBodyNone">[value]  </td><td class="markdownTableBodyNone">DD⁻¹  </td><td class="markdownTableBodyNone">Fitted  </td><td class="markdownTableBodyNone">LOW  </td><td class="markdownTableBodyNone">Slope for emergence probability vs. accumulated DD  </td></tr>
+</table>
 <p><b>Key Uncertainty: Prepupal Development</b></p>
 <p>The prepupal stage presents the highest parameter uncertainty. Laboratory studies (Radmacher &amp; Strohm 2011) provide quadratic temperature-development relationships at constant temperatures (15-35°C). However, these relationships produced unrealistic developmental durations under field conditions with daily temperature fluctuations and occasional extremes.</p>
 <p>The implemented lookup table approach allows flexible parameterization whilst acknowledging mechanistic uncertainty. Rates were adjusted iteratively until simulated emergence phenology matched field observations from multiple sites and years. This pragmatic approach prioritizes phenological realism over mechanistic detail given insufficient data to validate thermal performance curves under field conditions.</p>
@@ -623,7 +670,44 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 </div><!-- fragment --><p>Equation from <em>Osmia lignaria</em> studies (Sgolastra et al. 2011), assumed applicable to <em>O. bicornis</em> given similar overwintering biology. Confidence MEDIUM because species differ in cold tolerance; validation against <em>O. bicornis</em> field data desirable.</p>
 <h2 class="doxsection"><a class="anchor" id="autotoc_md49"></a>
 5.4 Provisioning and Reproduction Parameters</h2>
-<p>| Parameter | Default | Units | Source | Confidence | Description | |--------&mdash;|------&mdash;|----&mdash;|-----&mdash;|---------&mdash;|----------&mdash;| | <b>Resource Conversion</b> | | COCOON_TO_PROVISION_MASS | 3.247 | - | Seidelmann (2006) | HIGH | Ratio converting provision mass to cocoon mass (31% conversion efficiency) | | PROVISION_TO_COCOON_MASS | 0.308 | - | Seidelmann (2006) | HIGH | Inverse ratio (cocoon to provision) | | POLLEN_SCORE_TO_MG | 0.8 | mg·score⁻¹ | Calibrated | MEDIUM | Conversion from landscape pollen availability score to actual mg collectible | | <b>Provisioning Behavior</b> | | MIN_EGGS_PER_NEST | 3 | eggs | Ivanov (2006) | HIGH | Minimum planned eggs per nest | | MAX_EGGS_PER_NEST | 30 | eggs | Ivanov (2006) | HIGH | Maximum planned eggs per nest | | MALE_MIN_TARGET_PROVISION | 10.0 | mg | Seidelmann et al. (2010) | HIGH | Minimum provision mass for male cells | | FEMALE_MIN_TARGET_PROVISION | 20.0 | mg | Seidelmann et al. (2010) | HIGH | Minimum provision mass for female cells | | MIN_CELL_CONSTRUCTION_TIME | 1 | days | Field observations | HIGH | Minimum time to provision one cell under ideal conditions | | MAX_CELL_CONSTRUCTION_TIME | 4 | days | Seidelmann (2006) | HIGH | Maximum time before abandoning cell (parasitism risk threshold) | | LIFETIME_COCOON_MASS_LOSS | 30.0 | mg | Seidelmann et al. (2010) | MEDIUM | Total decline in provision mass from first to last offspring | | <b>Sex Allocation</b> | | SEX_RATIO_VS_AGE_LOGISTIC | [4 params] | - | Seidelmann et al. (2010) | HIGH | Logistic equation parameters for age-dependent sex ratio | | SEX_RATIO_VS_MASS_LINEAR | [2 params] | - | Seidelmann et al. (2010) | HIGH | Linear relationship between maternal mass and sex ratio adjustment | | FEMALE_COCOON_MASS_VS_AGE | [4 params] | - | Seidelmann et al. (2010) | HIGH | Logistic equation for age-dependent female offspring mass | | FEMALE_COCOON_MASS_VS_MASS | [2 params] | mg⁻¹ | Calibrated | MEDIUM | Linear relationship maternal mass → offspring mass. <b>Differs from formal model</b> (slope adjusted 0.46→0.3) |</p>
+<table class="markdownTable">
+<tr class="markdownTableHead">
+<th class="markdownTableHeadNone">Parameter  </th><th class="markdownTableHeadNone">Default  </th><th class="markdownTableHeadNone">Units  </th><th class="markdownTableHeadNone">Source  </th><th class="markdownTableHeadNone">Confidence  </th><th class="markdownTableHeadNone">Description  </th></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Resource Conversion</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">COCOON_TO_PROVISION_MASS  </td><td class="markdownTableBodyNone">3.247  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">Seidelmann (2006)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Ratio converting provision mass to cocoon mass (31% conversion efficiency)  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">PROVISION_TO_COCOON_MASS  </td><td class="markdownTableBodyNone">0.308  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">Seidelmann (2006)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Inverse ratio (cocoon to provision)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">POLLEN_SCORE_TO_MG  </td><td class="markdownTableBodyNone">0.8  </td><td class="markdownTableBodyNone">mg·score⁻¹  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Conversion from landscape pollen availability score to actual mg collectible  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Provisioning Behavior</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">MIN_EGGS_PER_NEST  </td><td class="markdownTableBodyNone">3  </td><td class="markdownTableBodyNone">eggs  </td><td class="markdownTableBodyNone">Ivanov (2006)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Minimum planned eggs per nest  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MAX_EGGS_PER_NEST  </td><td class="markdownTableBodyNone">30  </td><td class="markdownTableBodyNone">eggs  </td><td class="markdownTableBodyNone">Ivanov (2006)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Maximum planned eggs per nest  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">MALE_MIN_TARGET_PROVISION  </td><td class="markdownTableBodyNone">10.0  </td><td class="markdownTableBodyNone">mg  </td><td class="markdownTableBodyNone">Seidelmann et al. (2010)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Minimum provision mass for male cells  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FEMALE_MIN_TARGET_PROVISION  </td><td class="markdownTableBodyNone">20.0  </td><td class="markdownTableBodyNone">mg  </td><td class="markdownTableBodyNone">Seidelmann et al. (2010)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Minimum provision mass for female cells  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">MIN_CELL_CONSTRUCTION_TIME  </td><td class="markdownTableBodyNone">1  </td><td class="markdownTableBodyNone">days  </td><td class="markdownTableBodyNone">Field observations  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Minimum time to provision one cell under ideal conditions  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">MAX_CELL_CONSTRUCTION_TIME  </td><td class="markdownTableBodyNone">4  </td><td class="markdownTableBodyNone">days  </td><td class="markdownTableBodyNone">Seidelmann (2006)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Maximum time before abandoning cell (parasitism risk threshold)  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">LIFETIME_COCOON_MASS_LOSS  </td><td class="markdownTableBodyNone">30.0  </td><td class="markdownTableBodyNone">mg  </td><td class="markdownTableBodyNone">Seidelmann et al. (2010)  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Total decline in provision mass from first to last offspring  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone" colspan="6"><b>Sex Allocation</b>  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">SEX_RATIO_VS_AGE_LOGISTIC  </td><td class="markdownTableBodyNone">[4 params]  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">Seidelmann et al. (2010)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Logistic equation parameters for age-dependent sex ratio  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">SEX_RATIO_VS_MASS_LINEAR  </td><td class="markdownTableBodyNone">[2 params]  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">Seidelmann et al. (2010)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Linear relationship between maternal mass and sex ratio adjustment  </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">FEMALE_COCOON_MASS_VS_AGE  </td><td class="markdownTableBodyNone">[4 params]  </td><td class="markdownTableBodyNone">-  </td><td class="markdownTableBodyNone">Seidelmann et al. (2010)  </td><td class="markdownTableBodyNone">HIGH  </td><td class="markdownTableBodyNone">Logistic equation for age-dependent female offspring mass  </td></tr>
+<tr class="markdownTableRowOdd">
+<td class="markdownTableBodyNone">FEMALE_COCOON_MASS_VS_MASS  </td><td class="markdownTableBodyNone">[2 params]  </td><td class="markdownTableBodyNone">mg⁻¹  </td><td class="markdownTableBodyNone">Calibrated  </td><td class="markdownTableBodyNone">MEDIUM  </td><td class="markdownTableBodyNone">Linear relationship maternal mass → offspring mass. <b>Differs from formal model</b> (slope adjusted 0.46→0.3)  </td></tr>
+</table>
 <p><b>Sex Allocation Implementation:</b></p>
 <p>Sex ratio determination combines maternal age and mass effects through pre-calculated lookup tables (see <a class="el" href="classOsmia__Population__Manager.html#af825b438eaebaf119a71f5fed5817899">Osmia_Population_Manager::m_EggSexRatioEqns</a>). For each combination of maternal age (0-60 days) and mass (4-28 mg in 0.25 mg steps), the table stores:</p>
 <div class="fragment"><div class="line">sex_ratio[age][mass] = BASE + (ADJUSTED_MAX - BASE) / (1 + exp(-K × (age - AGE_50)))</div>
@@ -1351,7 +1435,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <p>For compilation instructions, system requirements (compiler versions, dependencies), configuration examples, and troubleshooting guidance, see README.md in the source repository.</p>
 <p><b>Citation:</b> When using this model in research publications, please cite both the formal model paper and this MIDox documentation:</p>
 <blockquote class="doxtable">
-<p>Ziółkowska E, Topping CJ, Björklund Rahm M, Klein A-M (2025). The Formal Model for the solitary bee <em>Osmia bicornis</em> L. agent-based model. Food and Ecological Systems Modelling Journal, 102102. <a href="https://doi.org/10.1016/j.fesm.2024.100102">https://doi.org/10.1016/j.fesm.2024.100102</a> </p>
+<p>Ziółkowska E, Bednarska AJ, Laskowski R, Topping CJ (2023). The Formal Model for the solitary bee <em>Osmia bicornis</em> L. agent-based model. Food and Ecological Systems Modelling Journal 4: e102102. <a href="https://doi.org/10.3897/fmj.4.102102">https://doi.org/10.3897/fmj.4.102102</a> </p>
 </blockquote>
 <blockquote class="doxtable">
 <p>[AUTHOR NAMES TO BE ADDED] (2025). <em>Osmia bicornis</em> Population Model: MIDox Implementation Documentation. Food and Ecological Systems Modelling Journal [Volume TBD]. DOI: [TBD] </p>
@@ -1360,7 +1444,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md107"></a>
 References</h1>
 <p><b>Core Model Development and Formal Specification</b></p>
-<p>Ziółkowska E, Topping CJ, Björklund Rahm M, Klein A-M (2025). The Formal Model for the solitary bee <em>Osmia bicornis</em> L. agent-based model. Food and Ecological Systems Modelling Journal, 102102. <a href="https://doi.org/10.1016/j.fesm.2024.100102">https://doi.org/10.1016/j.fesm.2024.100102</a></p>
+<p>Ziółkowska E, Bednarska AJ, Laskowski R, Topping CJ (2023). The Formal Model for the solitary bee <em>Osmia bicornis</em> L. agent-based model. Food and Ecological Systems Modelling Journal 4: e102102. <a href="https://doi.org/10.3897/fmj.4.102102">https://doi.org/10.3897/fmj.4.102102</a></p>
 <p><b>Empirical Biology and Parameterization</b></p>
 <p>Giejdasz K, Wilkaniec Z (2002). Individual development of the red mason bee (<em>Osmia rufa</em> L., Megachilidae) under natural and laboratory conditions. Journal of Apicultural Science, 46(2), 51-57.</p>
 <p>Ivanov SP (2006). Nesting habits of the red mason bee <em>Osmia bicornis</em> (Hymenoptera, Megachilidae). Entomological Review, 86(2), 221-226.</p>
