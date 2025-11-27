@@ -59,7 +59,7 @@ This document comprises nine sections:
 - **Section 8** (Implementation Discussion): Design trade-offs, limitations, and future directions
 - **Section 9** (Documentation Access): Links to interactive documentation and archived code
 
-Throughout, we use Doxygen `@ref` tags (e.g., @ref Osmia_Female) to link narrative text to specific code elements. These hyperlinks function in the HTML version, allowing readers to navigate seamlessly between conceptual explanation and implementation detail.
+Throughout, we use Doxygen `@ref` tags (e.g., [Osmia_Female](@ref Osmia_Female)) to link narrative text to specific code elements. These hyperlinks function in the HTML version, allowing readers to navigate seamlessly between conceptual explanation and implementation detail.
 
 ---
 
@@ -95,38 +95,38 @@ The model deliberately excludes:
 
 The model implements an agent-based architecture where individual bees are autonomous entities (agents) progressing through discrete life stages. Six agent classes represent developmental stages:
 
-- @ref Osmia_Egg: From laying to hatching (temperature-dependent duration)
-- @ref Osmia_Larva: Feeding and cocoon construction (resource-dependent growth)
-- @ref Osmia_Prepupa: Summer diapause (time-based, weakly temperature-dependent)
-- @ref Osmia_Pupa: Metamorphosis to adult form (temperature-dependent duration)
-- @ref Osmia_InCocoon: Fully-developed adult within cocoon (includes overwintering)
-- @ref Osmia_Female: Free-living reproductive female (foraging, nesting, dispersal)
+- [Osmia_Egg](@ref Osmia_Egg): From laying to hatching (temperature-dependent duration)
+- [Osmia_Larva](@ref Osmia_Larva): Feeding and cocoon construction (resource-dependent growth)
+- [Osmia_Prepupa](@ref Osmia_Prepupa): Summer diapause (time-based, weakly temperature-dependent)
+- [Osmia_Pupa](@ref Osmia_Pupa): Metamorphosis to adult form (temperature-dependent duration)
+- [Osmia_InCocoon](@ref Osmia_InCocoon): Fully-developed adult within cocoon (includes overwintering)
+- [Osmia_Female](@ref Osmia_Female): Free-living reproductive female (foraging, nesting, dispersal)
 
-All agent classes inherit from @ref Osmia_Base, which provides common attributes (age, mass, location) and methods (mortality checking, temperature access). This inheritance structure reduces code duplication whilst enabling stage-specific specialization.
+All agent classes inherit from [Osmia_Base](@ref Osmia_Base), which provides common attributes (age, mass, location) and methods (mortality checking, temperature access). This inheritance structure reduces code duplication whilst enabling stage-specific specialization.
 
 Males are not explicitly modelled. This design decision reflects biological reality (*Osmia bicornis* females are sole provisioners) and computational efficiency (modelling males would double agent count without substantially affecting female behaviour or population dynamics). Male abundance and mating success are implicit: females are assumed mated, and sex ratios emerge from maternal provisioning decisions.
 
 #### 2.2.2 Population Manager
 
-The @ref Osmia_Population_Manager orchestrates the simulation, handling:
+The [Osmia_Population_Manager](@ref Osmia_Population_Manager) orchestrates the simulation, handling:
 
 - **Initialization**: Reading configuration parameters, constructing lookup tables, creating starting population
 - **Scheduling**: Coordinating daily execution order (environmental updates, agent actions, cleanup)
 - **Spatial infrastructure**: Maintaining density grids, nest management, resource maps
 - **Global calculations**: Weather integration (foraging hours), seasonal transitions (overwintering triggers)
 
-The population manager follows the ALMaSS framework's standard Population_Manager pattern, providing *Osmia*-specific implementations of core scheduling hooks (@ref DoFirst(), @ref DoBefore(), @ref DoAfter(), @ref DoLast()) whilst delegating agent behaviour to individual classes.
+The population manager follows the ALMaSS framework's standard Population_Manager pattern, providing *Osmia*-specific implementations of core scheduling hooks ([DoFirst()](@ref DoFirst()), [DoBefore()](@ref DoBefore()), [DoAfter()](@ref DoAfter()), [DoLast()](@ref DoLast())) whilst delegating agent behaviour to individual classes.
 
 #### 2.2.3 Nest Management
 
-*Osmia bicornis* nests in pre-existing cavities (hollow stems, beetle holes, artificial nest boxes). The @ref Osmia_Nest_Manager maintains polygon-level nest availability, tracking:
+*Osmia bicornis* nests in pre-existing cavities (hollow stems, beetle holes, artificial nest boxes). The [Osmia_Nest_Manager](@ref Osmia_Nest_Manager) maintains polygon-level nest availability, tracking:
 
 - Suitable nesting habitat (derived from land-use classification)
 - Nest capacity (maximum nests per polygon based on substrate availability)
 - Active nests (currently occupied by provisioning females)
 - Nest lifecycle (creation when female claims cavity, release when abandoned or offspring emerge)
 
-Individual nests (modelled by @ref Osmia_Nest) contain linearly-arranged cells, each provisioned sequentially by the founding female. Nest structures persist across years (perennial nesting sites), though individual nest occupancy is annual (single reproductive season).
+Individual nests (modelled by [Osmia_Nest](@ref Osmia_Nest)) contain linearly-arranged cells, each provisioned sequentially by the founding female. Nest structures persist across years (perennial nesting sites), though individual nest occupancy is annual (single reproductive season).
 
 ### 2.3 Spatial and Temporal Scales
 
@@ -215,9 +215,9 @@ These uncertainties are explicitly documented in parameter descriptions (Section
 
 ### 3.1 Daily Execution Sequence
 
-The model executes with daily time steps following the ALMaSS framework's standardized scheduling pattern. Each day proceeds through four phases coordinated by the @ref Osmia_Population_Manager:
+The model executes with daily time steps following the ALMaSS framework's standardized scheduling pattern. Each day proceeds through four phases coordinated by the [Osmia_Population_Manager](@ref Osmia_Population_Manager):
 
-#### Phase 1: @ref DoFirst() - Environmental Updates
+#### Phase 1: [DoFirst()](@ref DoFirst()) - Environmental Updates
 
 ```
 FOR each day:
@@ -241,22 +241,22 @@ FOR each day:
     // Update nest manager status
     nest_manager.UpdateOsmiaNesting()  // Check for abandoned nests
     
-    // Clear density grid (will be repopulated during @ref BeginStep())
+    // Clear density grid (will be repopulated during [BeginStep()](@ref BeginStep()))
     FOR each grid_cell:
         grid_cell.female_count = 0
 ```
 
 This phase sets up shared environmental state that all agents will access during their individual updates. Calculations performed once per day rather than per agent yields substantial computational savings (O(1) vs. O(N) operations).
 
-#### Phase 2: Individual @ref BeginStep() - Agent Pre-Processing
+#### Phase 2: Individual [BeginStep()](@ref BeginStep()) - Agent Pre-Processing
 
 ```
 FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:
     FOR each individual IN life_stage:
-        individual.@ref BeginStep()
+        individual.[BeginStep()](@ref BeginStep())
 ```
 
-Stage-specific @ref BeginStep() implementations prepare agents for daily updates:
+Stage-specific [BeginStep()](@ref BeginStep()) implementations prepare agents for daily updates:
 
 **Egg/Larva/Prepupa/Pupa**: Check for completion of development
 ```
@@ -284,15 +284,15 @@ Update local resource availability if needed
 Update density grid: grid[location].female_count++
 ```
 
-#### Phase 3: Individual @ref Step() - Main Agent Actions
+#### Phase 3: Individual [Step()](@ref Step()) - Main Agent Actions
 
 ```
 FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:
     FOR each individual IN life_stage:
-        individual.@ref Step()
+        individual.[Step()](@ref Step())
 ```
 
-This phase implements stage-specific behaviour. For developmental stages (Egg through InCocoon), Step() applies mortality and signals transitions. For @ref Osmia_Female, Step() executes the behavioural state machine:
+This phase implements stage-specific behaviour. For developmental stages (Egg through InCocoon), Step() applies mortality and signals transitions. For [Osmia_Female](@ref Osmia_Female), Step() executes the behavioural state machine:
 
 ```
 WHILE state != DONE:
@@ -338,7 +338,7 @@ WHILE state != DONE:
 
 The state machine architecture separates concerns: each state handles a distinct behavioural mode, transitions occur based on clear criteria, and the loop terminates when reaching DONE or DIE states.
 
-#### Phase 4: @ref DoLast() - End-of-Day Processing
+#### Phase 4: [DoLast()](@ref DoLast()) - End-of-Day Processing
 
 ```
 // Update seasonal flags based on temperature history
@@ -383,7 +383,7 @@ The model supports parallel execution using OpenMP:
 ```cpp
 #pragma omp parallel
 FOR each individual IN population:
-    individual.@ref Step()
+    individual.[Step()](@ref Step())
 ```
 
 Thread safety ensured through:
@@ -402,7 +402,7 @@ This section describes key implementation components with extensive cross-refere
 
 ### 4.1 Development and Mortality
 
-All developmental stages inherit core development and mortality processes from @ref Osmia_Base. Stage-specific implementations (e.g., @ref Osmia_Egg::Step, @ref Osmia_Larva::Step) customize these processes whilst reusing infrastructure.
+All developmental stages inherit core development and mortality processes from [Osmia_Base](@ref Osmia_Base). Stage-specific implementations (e.g., [Osmia_Egg::Step](@ref Osmia_Egg::Step), [Osmia_Larva::Step](@ref Osmia_Larva::Step)) customize these processes whilst reusing infrastructure.
 
 #### 4.1.1 Degree-Day Development Model
 
@@ -420,13 +420,13 @@ if (m_AgeDegrees >= m_OsmiaEggDevelTotalDD) {
 }
 ```
 
-**Parameters** (see @ref Osmia_Base for full documentation):
-- @ref Osmia_Base::m_OsmiaEggDevelThreshold: 0.0°C (calibrated; see Section 5.1)
-- @ref Osmia_Base::m_OsmiaEggDevelTotalDD: 86 degree-days (calibrated; see Section 5.1)
-- @ref Osmia_Base::m_OsmiaLarvaDevelThreshold: 13.8°C (Radmacher & Strohm 2011)
-- @ref Osmia_Base::m_OsmiaLarvaDevelTotalDD: 240 degree-days (Radmacher & Strohm 2011)
-- @ref Osmia_Base::m_OsmiaPupaDevelThreshold: 1.1°C (calibrated; see Section 5.1)
-- @ref Osmia_Base::m_OsmiaPupaDevelTotalDD: 570 degree-days (calibrated; see Section 5.1)
+**Parameters** (see [Osmia_Base](@ref Osmia_Base) for full documentation):
+- [Osmia_Base::m_OsmiaEggDevelThreshold](@ref Osmia_Base::m_OsmiaEggDevelThreshold): 0.0°C (calibrated; see Section 5.1)
+- [Osmia_Base::m_OsmiaEggDevelTotalDD](@ref Osmia_Base::m_OsmiaEggDevelTotalDD): 86 degree-days (calibrated; see Section 5.1)
+- [Osmia_Base::m_OsmiaLarvaDevelThreshold](@ref Osmia_Base::m_OsmiaLarvaDevelThreshold): 13.8°C (Radmacher & Strohm 2011)
+- [Osmia_Base::m_OsmiaLarvaDevelTotalDD](@ref Osmia_Base::m_OsmiaLarvaDevelTotalDD): 240 degree-days (Radmacher & Strohm 2011)
+- [Osmia_Base::m_OsmiaPupaDevelThreshold](@ref Osmia_Base::m_OsmiaPupaDevelThreshold): 1.1°C (calibrated; see Section 5.1)
+- [Osmia_Base::m_OsmiaPupaDevelTotalDD](@ref Osmia_Base::m_OsmiaPupaDevelTotalDD): 570 degree-days (calibrated; see Section 5.1)
 
 **Implementation Difference from Formal Model**: Egg and pupal thresholds substantially reduced from laboratory values (13.8°C → 0.0°C for eggs, 13.2°C → 1.1°C for pupae) to prevent developmental failures under field temperature regimes. See Section 8.3 for detailed justification.
 
@@ -443,20 +443,20 @@ if (m_Age >= m_OsmiaPrepupalDevelTotalDays) {
 }
 ```
 
-The rate lookup uses integer temperature (0-41°C) to index a pre-calculated array (see @ref Osmia_Population_Manager::m_PrePupalDevelRates). Rates follow a thermal performance curve: low at temperature extremes, peaking around 20-25°C.
+The rate lookup uses integer temperature (0-41°C) to index a pre-calculated array (see [Osmia_Population_Manager::m_PrePupalDevelRates](@ref Osmia_Population_Manager::m_PrePupalDevelRates)). Rates follow a thermal performance curve: low at temperature extremes, peaking around 20-25°C.
 
 **Rationale**: The formal model specifies a quadratic temperature-development relationship based on Radmacher & Strohm (2011) laboratory studies at constant temperatures. Under field conditions with daily temperature fluctuations, this relationship produced unrealistic developmental durations. The lookup table approach allows flexible parameterization empirically calibrated to field emergence phenology whilst acknowledging mechanistic uncertainty. See Section 8.3 for extended discussion.
 
 **Parameters**:
-- @ref Osmia_Base::m_OsmiaPrepupalDevelTotalDays: 45 days (approximate; weakly temperature-dependent)
-- Temperature-rate lookup: @ref Osmia_Population_Manager::m_PrePupalDevelRates
+- [Osmia_Base::m_OsmiaPrepupalDevelTotalDays](@ref Osmia_Base::m_OsmiaPrepupalDevelTotalDays): 45 days (approximate; weakly temperature-dependent)
+- Temperature-rate lookup: [Osmia_Population_Manager::m_PrePupalDevelRates](@ref Osmia_Population_Manager::m_PrePupalDevelRates)
 
 #### 4.1.3 Overwintering Development
 
-The @ref Osmia_InCocoon stage implements complex overwintering physiology with three sub-phases:
+The [Osmia_InCocoon](@ref Osmia_InCocoon) stage implements complex overwintering physiology with three sub-phases:
 
 **Phase 1: Pre-wintering** (late summer/autumn)
-Adults in cocoons undergo physiological preparation for winter dormancy. No development accumulation. Transition to Phase 2 triggered by sustained autumn temperature drop (detected by population manager; see @ref Osmia_Population_Manager::DoLast).
+Adults in cocoons undergo physiological preparation for winter dormancy. No development accumulation. Transition to Phase 2 triggered by sustained autumn temperature drop (detected by population manager; see [Osmia_Population_Manager::DoLast](@ref Osmia_Population_Manager::DoLast)).
 
 **Phase 2: Overwintering** (winter)
 Accumulate chilling requirement below temperature threshold:
@@ -479,8 +479,8 @@ if (g_rand_uni() < emergence_prob) {
 This three-phase structure creates realistic emergence phenology: early warmth doesn't trigger emergence (chilling requirement unmet); late cold delays emergence despite sufficient chilling (temperature-dependent emergence probability).
 
 **Parameters**:
-- @ref Osmia_Base::m_OsmiaInCocoonOverwinteringTempThreshold: 5.0°C
-- @ref Osmia_Base::m_OsmiaInCocoonEmergCountConst, @ref Osmia_Base::m_OsmiaInCocoonEmergCountSlope: Emergence probability equation parameters
+- [Osmia_Base::m_OsmiaInCocoonOverwinteringTempThreshold](@ref Osmia_Base::m_OsmiaInCocoonOverwinteringTempThreshold): 5.0°C
+- [Osmia_Base::m_OsmiaInCocoonEmergCountConst](@ref Osmia_Base::m_OsmiaInCocoonEmergCountConst), [Osmia_Base::m_OsmiaInCocoonEmergCountSlope](@ref Osmia_Base::m_OsmiaInCocoonEmergCountSlope): Emergence probability equation parameters
 
 #### 4.1.4 Mortality Processes
 
@@ -500,7 +500,7 @@ Applied to eggs, larvae, prepupae, pupae. Rates from formal model specification:
 - Pupae: 0.003 per day
 
 **Overwintering Mortality** (mass- and temperature-dependent):
-The @ref Osmia_InCocoon stage implements overwintering mortality as function of accumulated winter degree-days and cocoon mass. Larger cocoons (more resource stores) survive better; prolonged cold increases mortality:
+The [Osmia_InCocoon](@ref Osmia_InCocoon) stage implements overwintering mortality as function of accumulated winter degree-days and cocoon mass. Larger cocoons (more resource stores) survive better; prolonged cold increases mortality:
 
 ```cpp
 double mortality_prob = WinterMortConst + WinterMortSlope × overwintering_DD;
@@ -527,7 +527,7 @@ Parasitism risk increases with cell open time. See Section 4.4 for detailed para
 
 ### 4.2 Female Provisioning Behaviour
 
-The @ref Osmia_Female class implements resource-limited reproductive behaviour, the core link between landscape resources and population dynamics.
+The [Osmia_Female](@ref Osmia_Female) class implements resource-limited reproductive behaviour, the core link between landscape resources and population dynamics.
 
 #### 4.2.1 Nest Finding and Creation
 
@@ -562,7 +562,7 @@ int eggs_this_nest = MinEggsPerNest +
 Drawn from uniform(3, 30), matching empirical nest size distributions (Ivanov 2006).
 
 **Step 2: Forage for pollen**
-Female searches for flower patches using pre-calculated foraging mask (see @ref OsmiaForageMaskDetailed). Mask identifies reachable patches within maximum homing distance ordered by proximity. Female visits nearest patch meeting quality/quantity thresholds:
+Female searches for flower patches using pre-calculated foraging mask (see [OsmiaForageMaskDetailed](@ref OsmiaForageMaskDetailed)). Mask identifies reachable patches within maximum homing distance ordered by proximity. Female visits nearest patch meeting quality/quantity thresholds:
 
 ```cpp
 FOR each patch IN foraging_mask (nearest first):
@@ -612,7 +612,7 @@ This provisioning loop continues until female exhausts her egg load or dies. Wea
 Sex allocation strategy emerges from two interacting effects:
 
 **1. Maternal age effect** (declining female bias):
-Young females produce ~60-75% females; old females ~40-50% females. Implemented via pre-calculated lookup table (@ref Osmia_Population_Manager::m_EggSexRatioEqns) combining logistic age function with linear mass scaling.
+Young females produce ~60-75% females; old females ~40-50% females. Implemented via pre-calculated lookup table ([Osmia_Population_Manager::m_EggSexRatioEqns](@ref Osmia_Population_Manager::m_EggSexRatioEqns)) combining logistic age function with linear mass scaling.
 
 **2. Provision mass effect** (threshold rule):
 ```cpp
@@ -632,9 +632,9 @@ This creates emergent sex ratio patterns matching empirical observations: larger
 
 Females search for flower patches within species-specific foraging range. Implementation uses two data structures:
 
-**1. Foraging Mask** (@ref OsmiaForageMask): Coarse radial search (100 m steps) identifying candidate patches within typical homing distance (~600 m). Used for initial patch identification.
+**1. Foraging Mask** ([OsmiaForageMask](@ref OsmiaForageMask)): Coarse radial search (100 m steps) identifying candidate patches within typical homing distance (~600 m). Used for initial patch identification.
 
-**2. Detailed Mask** (@ref OsmiaForageMaskDetailed): Fine-resolution (1 m steps) mapping specific locations within maximum homing distance (~900 m). Used when extensive search required (poor local resources).
+**2. Detailed Mask** ([OsmiaForageMaskDetailed](@ref OsmiaForageMaskDetailed)): Fine-resolution (1 m steps) mapping specific locations within maximum homing distance (~900 m). Used when extensive search required (poor local resources).
 
 Both masks pre-calculated to avoid repeated distance computations during daily foraging decisions.
 
@@ -699,7 +699,7 @@ Model parameters fall into five categories based on their biological role and da
 **4. Spatial Parameters** - Movement distances and habitat suitability
 **5. Environmental Parameters** - Weather thresholds and seasonal transitions
 
-All parameters are defined as configuration variables in the C++ source code (see @ref Osmia.cpp and @ref Osmia_Population_Manager.cpp), allowing modification without recompilation. Default values reflect either direct empirical measurements or calibrated values matching observed population dynamics.
+All parameters are defined as configuration variables in the C++ source code (see [Osmia](@ref Osmia).cpp and [Osmia_Population_Manager](@ref Osmia_Population_Manager).cpp), allowing modification without recompilation. Default values reflect either direct empirical measurements or calibrated values matching observed population dynamics.
 
 ### 5.2 Development Parameters
 
@@ -784,7 +784,7 @@ Equation from *Osmia lignaria* studies (Sgolastra et al. 2011), assumed applicab
 
 **Sex Allocation Implementation:**
 
-Sex ratio determination combines maternal age and mass effects through pre-calculated lookup tables (see @ref Osmia_Population_Manager::m_EggSexRatioEqns). For each combination of maternal age (0-60 days) and mass (4-28 mg in 0.25 mg steps), the table stores:
+Sex ratio determination combines maternal age and mass effects through pre-calculated lookup tables (see [Osmia_Population_Manager::m_EggSexRatioEqns](@ref Osmia_Population_Manager::m_EggSexRatioEqns)). For each combination of maternal age (0-60 days) and mass (4-28 mg in 0.25 mg steps), the table stores:
 
 ```
 sex_ratio[age][mass] = BASE + (ADJUSTED_MAX - BASE) / (1 + exp(-K × (age - AGE_50)))
@@ -1669,16 +1669,16 @@ Stillman RA, Railsback SF, Giske J, Berger U, Grimm V (2015). Making predictions
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| @ref Osmia_Base | Common attributes/methods for all life stages | @ref GetTemp(), @ref SetTemp(), @ref CheckMortality() |
-| @ref Osmia_Egg | Egg development and hatching | @ref Step(), @ref TransitionToLarva() |
-| @ref Osmia_Larva | Larval feeding and cocoon construction | @ref Step(), @ref TransitionToPrepupa() |
-| @ref Osmia_Prepupa | Summer diapause | @ref Step(), @ref TransitionToPupa() |
-| @ref Osmia_Pupa | Metamorphosis to adult | @ref Step(), @ref TransitionToInCocoon() |
-| @ref Osmia_InCocoon | Overwintering adult in cocoon | @ref Step(), @ref Emerge() |
-| @ref Osmia_Female | Reproductive behaviour | @ref Step(), @ref FindNest(), @ref Forage(), @ref LayEgg() |
-| @ref Osmia_Population_Manager | Simulation orchestration | @ref Init(), @ref DoFirst(), @ref CreateObjects() |
-| @ref Osmia_Nest_Manager | Nest availability tracking | @ref UpdateOsmiaNesting(), @ref IsNestPossible() |
-| @ref Osmia_Nest | Individual nest structure | @ref AddEgg(), @ref AddCocoon(), @ref CloseNest() |
+| [Osmia_Base](@ref Osmia_Base) | Common attributes/methods for all life stages | [GetTemp()](@ref GetTemp()), [SetTemp()](@ref SetTemp()), [CheckMortality()](@ref CheckMortality()) |
+| [Osmia_Egg](@ref Osmia_Egg) | Egg development and hatching | [Step()](@ref Step()), [TransitionToLarva()](@ref TransitionToLarva()) |
+| [Osmia_Larva](@ref Osmia_Larva) | Larval feeding and cocoon construction | [Step()](@ref Step()), [TransitionToPrepupa()](@ref TransitionToPrepupa()) |
+| [Osmia_Prepupa](@ref Osmia_Prepupa) | Summer diapause | [Step()](@ref Step()), [TransitionToPupa()](@ref TransitionToPupa()) |
+| [Osmia_Pupa](@ref Osmia_Pupa) | Metamorphosis to adult | [Step()](@ref Step()), [TransitionToInCocoon()](@ref TransitionToInCocoon()) |
+| [Osmia_InCocoon](@ref Osmia_InCocoon) | Overwintering adult in cocoon | [Step()](@ref Step()), [Emerge()](@ref Emerge()) |
+| [Osmia_Female](@ref Osmia_Female) | Reproductive behaviour | [Step()](@ref Step()), [FindNest()](@ref FindNest()), [Forage()](@ref Forage()), [LayEgg()](@ref LayEgg()) |
+| [Osmia_Population_Manager](@ref Osmia_Population_Manager) | Simulation orchestration | [Init()](@ref Init()), [DoFirst()](@ref DoFirst()), [CreateObjects()](@ref CreateObjects()) |
+| [Osmia_Nest_Manager](@ref Osmia_Nest_Manager) | Nest availability tracking | [UpdateOsmiaNesting()](@ref UpdateOsmiaNesting()), [IsNestPossible()](@ref IsNestPossible()) |
+| [Osmia_Nest](@ref Osmia_Nest) | Individual nest structure | [AddEgg()](@ref AddEgg()), [AddCocoon()](@ref AddCocoon()), [CloseNest()](@ref CloseNest()) |
 
 ### Configuration File Structure
 

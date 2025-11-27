@@ -100,7 +100,7 @@ $(function(){initNavTree('index.html','',''); });
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><p><a class="anchor" id="md_docs_2Osmia__MIDox__Complete"></a></p>
-<p><b>Authors: Christopher John Topping, Xiaodong Dua, Elzbieta Ziolkowska</b></p>
+<p><b>Authors: 99999Christopher John Topping, Xiaodong Duan, Elzbieta Ziolkowska</b></p>
 <h1 class="doxsection"><a class="anchor" id="autotoc_md1"></a>
 Abstract</h1>
 <p>This document provides comprehensive implementation documentation for an agent-based population model of the red mason bee (<em>Osmia bicornis</em>) developed within the ALMaSS (Animal Landscape and Man Simulation System) framework. The model simulates individual bee life cycles from egg through adult, incorporating temperature-dependent development, resource-limited provisioning behaviour, and overwintering physiology. Implementation follows the MIDox (Model Implementation Documentation with Doxygen) standard, providing detailed parameter documentation, biological rationale for design decisions, and explicit assessment of uncertainties. The model serves multiple research purposes: evaluating landscape management effects on solitary bee populations, assessing pesticide risks to pollinator communities, and exploring climate change impacts on bee phenology. Complete interactive documentation with full code cross-references is available at the GitHub Pages and Zenodo repositories listed in Section 9.</p>
@@ -132,7 +132,7 @@ Abstract</h1>
 <p>This MIDox documentation is the second in a three-paper sequence:</p>
 <ol type="1">
 <li><b>Formal Model</b> (Ziółkowska et al. 2025, Food and Ecological Systems Modelling Journal): Conceptual specification using mathematical notation and structured natural language, describing model purpose, scope, entities, processes, and equations without implementation details</li>
-<li><b>MIDox Implementation</b> (this document): Complete technical specification of the working model, documenting all classes, methods, parameters, and design decisions with biological justification</li>
+<li><b>MIDox Implementation</b> (FESMJ article ref): Complete technical specification of the working model, documenting all classes, methods, parameters, and design decisions with biological justification</li>
 <li><b>Testing and Calibration</b> (in preparation): Validation against empirical data, sensitivity analyses, and parameter estimation procedures</li>
 </ol>
 <p>This sequence separates concerns: the formal model establishes biological validity; the MIDox ensures implementation fidelity; testing confirms empirical adequacy. Each paper serves distinct audiences whilst maintaining coherence through explicit cross-references.</p>
@@ -200,7 +200,7 @@ Abstract</h1>
 <li><b>Spatial infrastructure</b>: Maintaining density grids, nest management, resource maps</li>
 <li><b>Global calculations</b>: Weather integration (foraging hours), seasonal transitions (overwintering triggers)</li>
 </ul>
-<p>The population manager follows the ALMaSS framework's standard Population_Manager pattern, providing <em>Osmia</em>-specific implementations of core scheduling hooks (DoFirst, DoBefore, DoAfter, DoLast) whilst delegating agent behaviour to individual classes.</p>
+<p>The population manager follows the ALMaSS framework's standard Population_Manager pattern, providing <em>Osmia</em>-specific implementations of core scheduling hooks (DoFirst(), DoBefore(), DoAfter(), DoLast()) whilst delegating agent behaviour to individual classes.</p>
 <h3 class="doxsection"><a class="anchor" id="autotoc_md14"></a>
 2.2.3 Nest Management</h3>
 <p><em>Osmia bicornis</em> nests in pre-existing cavities (hollow stems, beetle holes, artificial nest boxes). The Osmia_Nest_Manager maintains polygon-level nest availability, tracking:</p>
@@ -294,7 +294,7 @@ Phase 1: DoFirst() - Environmental Updates</h3>
 <div class="line">    // Update nest manager status</div>
 <div class="line">    nest_manager.UpdateOsmiaNesting()  // Check for abandoned nests</div>
 <div class="line">    </div>
-<div class="line">    // Clear density grid (will be repopulated during BeginStep)</div>
+<div class="line">    // Clear density grid (will be repopulated during @ref BeginStep())</div>
 <div class="line">    FOR each grid_cell:</div>
 <div class="line">        grid_cell.female_count = 0</div>
 </div><!-- fragment --><p>This phase sets up shared environmental state that all agents will access during their individual updates. Calculations performed once per day rather than per agent yields substantial computational savings (O(1) vs. O(N) operations).</p>
@@ -302,7 +302,7 @@ Phase 1: DoFirst() - Environmental Updates</h3>
 Phase 2: Individual BeginStep() - Agent Pre-Processing</h3>
 <div class="fragment"><div class="line">FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:</div>
 <div class="line">    FOR each individual IN life_stage:</div>
-<div class="line">        individual.BeginStep()</div>
+<div class="line">        individual.@ref BeginStep()</div>
 </div><!-- fragment --><p>Stage-specific BeginStep() implementations prepare agents for daily updates:</p>
 <p><b>Egg/Larva/Prepupa/Pupa</b>: Check for completion of development </p><div class="fragment"><div class="line">accumulated_development += daily_development_increment</div>
 <div class="line">IF accumulated_development &gt;= required_development:</div>
@@ -322,7 +322,7 @@ Phase 2: Individual BeginStep() - Agent Pre-Processing</h3>
 Phase 3: Individual Step() - Main Agent Actions</h3>
 <div class="fragment"><div class="line">FOR each life_stage IN [Egg, Larva, Prepupa, Pupa, InCocoon, Female]:</div>
 <div class="line">    FOR each individual IN life_stage:</div>
-<div class="line">        individual.Step()</div>
+<div class="line">        individual.@ref Step()</div>
 </div><!-- fragment --><p>This phase implements stage-specific behaviour. For developmental stages (Egg through InCocoon), Step() applies mortality and signals transitions. For <a class="el" href="classOsmia__Female.html">Osmia_Female</a>, Step() executes the behavioural state machine:</p>
 <div class="fragment"><div class="line">WHILE state != DONE:</div>
 <div class="line">    SWITCH current_state:</div>
@@ -397,7 +397,7 @@ Phase 4: DoLast() - End-of-Day Processing</h3>
 <p>The model supports parallel execution using OpenMP:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#pragma omp parallel</span></div>
 <div class="line">FOR each individual IN population:</div>
-<div class="line">    individual.Step()</div>
+<div class="line">    individual.@ref Step()</div>
 </div><!-- fragment --><p>Thread safety ensured through:</p><ul>
 <li><b>Read-only global state</b>: Temperature, weather, resource maps accessed but not modified</li>
 <li><b>Local agent state</b>: Each agent modifies only its own attributes</li>
