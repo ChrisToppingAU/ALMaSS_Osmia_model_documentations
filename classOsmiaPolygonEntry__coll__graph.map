@@ -1,0 +1,14 @@
+<map id="OsmiaPolygonEntry" name="OsmiaPolygonEntry">
+<area shape="rect" id="Node000001" title="Nest list and density controls for a single landscape polygon." alt="" coords="65,299,215,324"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="71,196,209,236"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="143,250,143,298,137,298,137,250"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Nest.html" title="Container representing a linear nest structure with sequentially provisioned cells." alt="" coords="89,108,191,133"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,147,143,196,137,196,137,147"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="5,13,80,38"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="60,47,124,106,120,110,56,50"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="73,45,136,106,132,110,70,49"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="104,5,243,45"/>
+<area shape="poly" id="edge5_Node000003_Node000005" title=" " alt="" coords="164,59,147,109,142,107,159,57"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Nest__Manager.html" title="Manages polygon&#45;level nest availability and nest object lifecycle." alt="" coords="267,13,432,38"/>
+<area shape="poly" id="edge6_Node000003_Node000006" title=" " alt="" coords="313,46,167,110,165,105,310,41"/>
+</map>

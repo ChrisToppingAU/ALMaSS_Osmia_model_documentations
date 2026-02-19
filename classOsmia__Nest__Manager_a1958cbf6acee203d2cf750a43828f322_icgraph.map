@@ -1,0 +1,7 @@
+<map id="Osmia_Nest_Manager::CreateNest" name="Osmia_Nest_Manager::CreateNest">
+<area shape="rect" id="Node000001" title="Create new nest at specified location." alt="" coords="517,5,683,45"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Population__Manager.html#add181bfe760f2450d8834b8fcaf96d3a" title="Create new nest at specified location." alt="" coords="265,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,28,469,28,469,23,503,23"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Population__Manager.html#a047e019acba763f6ddf700c778d74b26" title="Constructor initializing population manager." alt="" coords="5,5,217,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,28,218,28,218,23,252,23"/>
+</map>

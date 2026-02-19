@@ -1,0 +1,21 @@
+<map id="Osmia_Population_Manager::Osmia_Population_Manager" name="Osmia_Population_Manager::Osmia_Population_Manager">
+<area shape="rect" id="Node000001" title="Constructor initializing population manager." alt="" coords="5,176,217,216"/>
+<area shape="rect" id="Node000002" href="$Osmia__Population__Manager__dox_8cpp.html#a23f7c59b353b1b840451e8f267b18ef8" title=" " alt="" coords="271,5,483,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="127,174,184,115,222,83,264,55,278,48,280,53,267,60,225,87,188,119,131,178"/>
+<area shape="rect" id="Node000003" href="$Osmia__Population__Manager__dox_8cpp.html#a5a914edec9a4029ee668603263ac69f4" title=" " alt="" coords="271,69,482,109"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="148,173,202,146,264,119,286,111,287,116,266,124,205,151,151,178"/>
+<area shape="rect" id="Node000004" href="$Osmia__Population__Manager__dox_8cpp.html#a18c10d18f0bdc45ef48454da194aa6eb" title=" " alt="" coords="265,134,488,159"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="217,174,294,159,295,164,218,179"/>
+<area shape="rect" id="Node000005" href="$Osmia__Population__Manager__dox_8cpp.html#a95e8b7c7685b979f86398d45583dd003" title=" " alt="" coords="307,183,447,209"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="218,193,293,193,293,199,218,199"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Population__Manager.html#add181bfe760f2450d8834b8fcaf96d3a" title="Create new nest at specified location." alt="" coords="275,233,479,273"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="205,213,271,228,270,233,204,219"/>
+<area shape="rect" id="Node000008" href="$classOsmia__Population__Manager.html#a64e4f851baf4664844d2410f54481db3" title="Check if polygon suitable for Osmia nesting." alt="" coords="275,297,479,337"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="143,214,199,249,266,283,286,290,284,295,264,288,197,253,141,218"/>
+<area shape="rect" id="Node000010" href="$classOsmia__Nest__Manager.html#aade3226194cee4f47632882c598e1a6c" title="Update nest availability status across all polygons." alt="" coords="292,361,461,401"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="129,214,185,280,224,316,267,347,281,354,278,359,264,352,220,320,181,283,125,218"/>
+<area shape="rect" id="Node000007" href="$classOsmia__Nest__Manager.html#a1958cbf6acee203d2cf750a43828f322" title="Create new nest at specified location." alt="" coords="537,233,702,273"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="479,251,523,251,523,256,479,256"/>
+<area shape="rect" id="Node000009" href="$classOsmia__Nest__Manager.html#aa4bdc824470e3456a608c68c7a9f5b33" title="Check if nest creation is possible in specified polygon." alt="" coords="536,297,703,337"/>
+<area shape="poly" id="edge8_Node000008_Node000009" title=" " alt="" coords="479,315,522,315,522,320,479,320"/>
+</map>

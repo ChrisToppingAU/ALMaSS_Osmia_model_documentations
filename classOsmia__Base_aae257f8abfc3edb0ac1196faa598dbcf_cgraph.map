@@ -1,0 +1,14 @@
+<map id="Osmia_Base::Osmia_Base" name="Osmia_Base::Osmia_Base">
+<area shape="rect" id="Node000001" title="Constructor creating new Osmia_Base individual." alt="" coords="5,56,197,81"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Base.html#a1c434e589e5e6c52b6bf553168be1f8e" title="Reinitialize object from object pool." alt="" coords="245,31,395,56"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="197,55,231,51,232,56,198,60"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Base.html#ab805efa2ecde9c8a216beb3cb9ff3210" title="Set individual&#39;s age in days." alt="" coords="465,5,623,31"/>
+<area shape="poly" id="edge5_Node000001_Node000003" title=" " alt="" coords="129,53,182,32,245,15,298,9,352,6,452,7,452,13,352,11,298,14,246,21,183,37,131,58"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Base.html#af53bc60e887dc515f85388f91eae324f" title="Set individual&#39;s mass (mg)" alt="" coords="461,68,627,93"/>
+<area shape="poly" id="edge6_Node000001_Node000004" title=" " alt="" coords="198,69,447,75,447,81,198,74"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Base.html#a36da7070a00889ab678dc903ba71a704" title="Set parasitism status." alt="" coords="443,117,645,143"/>
+<area shape="poly" id="edge7_Node000001_Node000005" title=" " alt="" coords="194,79,438,113,438,118,193,84"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="395,32,451,26,452,31,395,38"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="395,53,454,63,454,68,395,58"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="343,54,389,79,444,104,467,111,465,116,442,108,386,83,341,58"/>
+</map>

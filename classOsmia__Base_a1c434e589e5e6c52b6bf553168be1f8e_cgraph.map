@@ -1,0 +1,9 @@
+<map id="Osmia_Base::ReInit" name="Osmia_Base::ReInit">
+<area shape="rect" id="Node000001" title="Reinitialize object from object pool." alt="" coords="5,55,155,80"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Base.html#ab805efa2ecde9c8a216beb3cb9ff3210" title="Set individual&#39;s age in days." alt="" coords="225,5,383,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,52,232,31,233,36,139,57"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Base.html#af53bc60e887dc515f85388f91eae324f" title="Set individual&#39;s mass (mg)" alt="" coords="221,55,387,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="155,65,207,65,207,70,155,70"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Base.html#a36da7070a00889ab678dc903ba71a704" title="Set parasitism status." alt="" coords="203,104,405,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="139,77,233,98,232,104,138,83"/>
+</map>

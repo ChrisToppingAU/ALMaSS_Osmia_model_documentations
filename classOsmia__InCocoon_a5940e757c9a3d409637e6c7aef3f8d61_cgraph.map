@@ -1,0 +1,7 @@
+<map id="Osmia_InCocoon::st_Develop" name="Osmia_InCocoon::st_Develop">
+<area shape="rect" id="Node000001" title="Development state &#45; manage overwintering phases and emergence preparation." alt="" coords="5,23,156,63"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Nest.html#ace9d180f5ef3278300de8eac3162b988" title="Get micro&#45;environmental aspect delay." alt="" coords="217,5,432,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="156,33,203,28,204,33,157,38"/>
+<area shape="rect" id="Node000003" href="$classOsmia__InCocoon.html#aba61dd7b9da3b7ab6059a44ef9586e5b" title="Calculate overwintering mortality probability from prewinter thermal conditions." alt="" coords="204,55,445,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="157,48,191,51,190,57,156,53"/>
+</map>

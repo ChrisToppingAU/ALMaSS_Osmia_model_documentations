@@ -1,0 +1,6 @@
+<map id="Osmia_Nest" name="Osmia_Nest">
+<area shape="rect" id="Node000001" title="Container representing a linear nest structure with sequentially provisioned cells." alt="" coords="5,79,107,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="19,5,93,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="50,44,52,78,46,79,45,45"/>
+<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="67,45,66,79,60,78,62,44"/>
+</map>

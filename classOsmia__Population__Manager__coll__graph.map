@@ -1,0 +1,7 @@
+<map id="Osmia_Population_Manager" name="Osmia_Population_Manager">
+<area shape="rect" id="Node000001" title="Central coordinator for Osmia bicornis population simulation." alt="" coords="73,93,277,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,5,160,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="107,38,164,91,160,95,103,42"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Nest__Manager.html" title="Manages polygon&#45;level nest availability and nest object lifecycle." alt="" coords="184,5,349,31"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="246,42,189,95,186,91,242,38"/>
+</map>

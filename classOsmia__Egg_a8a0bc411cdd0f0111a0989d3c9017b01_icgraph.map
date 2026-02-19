@@ -1,0 +1,5 @@
+<map id="Osmia_Egg::st_Develop" name="Osmia_Egg::st_Develop">
+<area shape="rect" id="Node000001" title="Development state &#45; accumulate degree&#45;days toward hatching." alt="" coords="185,5,361,31"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Egg.html#aa7f3b64133c6f0c2e0bba21d10cd9224" title="Main step function executing egg behaviour." alt="" coords="5,5,137,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="172,21,138,21,138,15,172,15"/>
+</map>

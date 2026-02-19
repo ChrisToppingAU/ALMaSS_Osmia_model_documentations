@@ -1,0 +1,7 @@
+<map id="cfg_OsmiaEggThresholdBasedPesticideResponse" name="cfg_OsmiaEggThresholdBasedPesticideResponse">
+<area shape="rect" id="Node000001" title=" " alt="" coords="409,5,628,45"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Egg.html#a8a0bc411cdd0f0111a0989d3c9017b01" title="Development state &#45; accumulate degree&#45;days toward hatching." alt="" coords="185,13,361,38"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="396,28,362,28,362,23,396,23"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Egg.html#aa7f3b64133c6f0c2e0bba21d10cd9224" title="Main step function executing egg behaviour." alt="" coords="5,13,137,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="172,28,138,28,138,23,172,23"/>
+</map>

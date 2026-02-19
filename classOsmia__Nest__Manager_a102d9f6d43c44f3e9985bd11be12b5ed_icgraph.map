@@ -1,0 +1,5 @@
+<map id="Osmia_Nest_Manager::ReleaseOsmiaNest" name="Osmia_Nest_Manager::ReleaseOsmiaNest">
+<area shape="rect" id="Node000001" title="Release (destroy) nest from polygon." alt="" coords="257,5,423,45"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Population__Manager.html#aa969de84a8a19aa02699d016529778b2" title="Release (destroy) nest from polygon." alt="" coords="5,5,209,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="243,28,209,28,209,23,243,23"/>
+</map>

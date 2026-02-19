@@ -1,0 +1,5 @@
+<map id="OsmiaParasitoid_Population_Manager" name="OsmiaParasitoid_Population_Manager">
+<area shape="rect" id="Node000001" title="Grid&#45;based manager coordinating multiple parasitoid sub&#45;populations." alt="" coords="5,79,209,119"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,5,185,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,44,110,79,105,79,105,44"/>
+</map>

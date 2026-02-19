@@ -1,0 +1,13 @@
+<map id="Osmia_Egg::Step" name="Osmia_Egg::Step">
+<area shape="rect" id="Node000001" title="Main step function executing egg behaviour." alt="" coords="5,90,137,115"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Egg.html#a8a0bc411cdd0f0111a0989d3c9017b01" title="Development state &#45; accumulate degree&#45;days toward hatching." alt="" coords="185,41,361,66"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="123,87,207,67,208,72,125,93"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Base.html#a574e3b2b94e7f94b63c9d677559d85c3" title="Behavioural state for death &#45; cleanup and removal." alt="" coords="189,90,357,115"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="137,100,176,100,176,105,137,105"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Egg.html#a3d7bf0a94cddb02e1f35abf4dccc0c0b" title="Transition state &#45; metamorphose from egg to larva." alt="" coords="193,139,353,165"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="125,113,208,133,207,139,123,118"/>
+<area shape="rect" id="Node000003" href="$Osmia__dox_8cpp.html#a7d4c0ef3a5264a2bb6a3c85fc0df6cb0" title=" " alt="" coords="409,5,628,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="361,41,395,37,396,42,362,46"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Egg.html#aab1ad8be14870a48b1f4a93617794ead" title="Daily mortality test for eggs." alt="" coords="421,70,617,95"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="362,61,407,67,407,72,361,66"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="Node000000" title=" " alt="" coords="5,42,160,67"/>
+<area shape="rect" id="Node000001" href="$classOsmiaParasitoid__Population__Manager.html" title="Grid&#45;based manager coordinating multiple parasitoid sub&#45;populations." alt="" coords="208,5,412,45"/>
+<area shape="poly" id="edge1_Node000000_Node000001" title=" " alt="" coords="173,40,208,36,208,41,174,46"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Population__Manager.html" title="Central coordinator for Osmia bicornis population simulation." alt="" coords="208,70,412,95"/>
+<area shape="poly" id="edge2_Node000000_Node000002" title=" " alt="" coords="174,63,208,67,208,73,173,68"/>
+</map>

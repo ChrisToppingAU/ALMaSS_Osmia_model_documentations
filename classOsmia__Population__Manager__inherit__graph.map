@@ -1,0 +1,5 @@
+<map id="Osmia_Population_Manager" name="Osmia_Population_Manager">
+<area shape="rect" id="Node000001" title="Central coordinator for Osmia bicornis population simulation." alt="" coords="5,79,209,104"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="30,5,185,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="110,44,110,79,105,79,105,44"/>
+</map>

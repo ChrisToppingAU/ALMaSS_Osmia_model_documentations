@@ -1,0 +1,5 @@
+<map id="cfg_OsmiaEggDevelThreshold" name="cfg_OsmiaEggDevelThreshold">
+<area shape="rect" id="Node000001" title=" " alt="" coords="252,13,469,38"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Base.html#ab625ca023fbb4cb430b41187c19a9378" title="Populate all static parameters from configuration file." alt="" coords="5,5,204,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="239,28,204,28,204,23,239,23"/>
+</map>

@@ -1,0 +1,13 @@
+<map id="Osmia_Prepupa::ReInit" name="Osmia_Prepupa::ReInit">
+<area shape="rect" id="Node000001" title="Reinitialize prepupa from object pool." alt="" coords="697,42,868,67"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Prepupa.html#a76f75dba719863e12d956a25e1f37e1c" title="Constructor transferring from larva to prepupa." alt="" coords="475,5,649,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="683,44,649,40,650,34,684,39"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Pupa.html#a6a8e9a88edb6b69402c015a8aab66ed8" title="Reinitialize pupa from object pool." alt="" coords="487,70,637,95"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="684,70,637,76,636,71,683,65"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Pupa.html#a97279db6c8335438d1dff2e516602cbf" title="Constructor transferring from prepupa." alt="" coords="235,45,427,70"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="473,76,426,70,427,65,474,70"/>
+<area shape="rect" id="Node000005" href="$classOsmia__InCocoon.html#affe3ed7a1b2bb44323d325353350bd42" title="Reinitialize object from pool." alt="" coords="242,94,419,119"/>
+<area shape="poly" id="edge4_Node000003_Node000005" title=" " alt="" coords="474,94,420,100,419,95,473,89"/>
+<area shape="rect" id="Node000006" href="$classOsmia__InCocoon.html#adfcfa1f4f00c912840b61570a8aa3812" title="Constructor for newly eclosed adult in cocoon." alt="" coords="5,87,187,127"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="228,109,187,109,187,104,228,104"/>
+</map>

@@ -1,0 +1,44 @@
+<map id="Osmia_Female" name="Osmia_Female">
+<area shape="rect" id="Node000001" title="Active adult female conducting reproduction." alt="" coords="171,687,290,712"/>
+<area shape="rect" id="Node000002" href="$classOsmia__InCocoon.html" title="Overwintering adult stage within cocoon." alt="" coords="84,599,215,624"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="164,633,215,684,211,688,161,637"/>
+<area shape="poly" id="edge24_Node000001_Node000002" title=" " alt="" coords="179,631,228,684,224,688,175,635"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Pupa.html" title="Pupal metamorphosis stage." alt="" coords="98,524,201,549"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="143,563,145,598,140,598,138,563"/>
+<area shape="poly" id="edge23_Node000002_Node000003" title=" " alt="" coords="161,563,159,598,154,598,155,563"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Prepupa.html" title="Prepupal diapause stage in cocoon." alt="" coords="87,449,211,475"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="143,488,145,524,140,524,138,489"/>
+<area shape="poly" id="edge22_Node000003_Node000004" title=" " alt="" coords="161,489,159,524,154,524,155,488"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Larva.html" title="Feeding larval stage consuming provision mass." alt="" coords="96,375,203,400"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="143,414,145,449,140,449,138,414"/>
+<area shape="poly" id="edge21_Node000004_Node000005" title=" " alt="" coords="161,414,159,449,154,449,155,414"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Egg.html" title="First life stage &#45; egg developing within sealed nest cell." alt="" coords="102,300,197,325"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="143,339,145,374,140,374,138,339"/>
+<area shape="poly" id="edge20_Node000005_Node000006" title=" " alt="" coords="161,339,159,374,154,374,155,339"/>
+<area shape="rect" id="Node000007" href="$classOsmia__Base.html" title="Foundation class for all Osmia bicornis life stages." alt="" coords="98,225,201,251"/>
+<area shape="poly" id="edge6_Node000006_Node000007" title=" " alt="" coords="143,264,145,300,140,300,138,265"/>
+<area shape="poly" id="edge19_Node000006_Node000007" title=" " alt="" coords="161,265,159,300,154,300,155,264"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="5,13,80,38"/>
+<area shape="poly" id="edge7_Node000007_Node000008" title=" " alt="" coords="43,51,56,96,77,147,105,190,134,224,130,227,100,193,72,149,50,98,38,52"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="61,49,78,95,101,147,128,190,150,224,145,227,123,193,96,149,74,97,56,51"/>
+<area shape="rect" id="Node000013" href="$classOsmia__Nest.html" title="Container representing a linear nest structure with sequentially provisioned cells." alt="" coords="99,115,200,141"/>
+<area shape="poly" id="edge15_Node000013_Node000008" title=" " alt="" coords="60,46,133,113,129,117,57,50"/>
+<area shape="poly" id="edge16_Node000013_Node000008" title=" " alt="" coords="73,45,145,113,141,117,70,49"/>
+<area shape="rect" id="Node000009" href="$classOsmia__Population__Manager.html" title="Central coordinator for Osmia bicornis population simulation." alt="" coords="275,115,479,141"/>
+<area shape="poly" id="edge9_Node000007_Node000009" title=" " alt="" coords="345,149,233,204,178,228,176,223,231,199,342,144"/>
+<area shape="rect" id="Node000010" title=" " alt="" coords="513,13,668,38"/>
+<area shape="poly" id="edge10_Node000009_Node000010" title=" " alt="" coords="583,52,571,70,555,86,510,104,447,118,446,113,508,99,552,82,567,67,578,49"/>
+<area shape="rect" id="Node000012" href="$classOsmiaParasitoid__Population__Manager.html" title="Grid&#45;based manager coordinating multiple parasitoid sub&#45;populations." alt="" coords="505,108,709,148"/>
+<area shape="poly" id="edge13_Node000012_Node000010" title=" " alt="" coords="597,51,606,107,601,108,592,52"/>
+<area shape="rect" id="Node000011" href="$classOsmia__Nest__Manager.html" title="Manages polygon&#45;level nest availability and nest object lifecycle." alt="" coords="281,13,447,38"/>
+<area shape="poly" id="edge11_Node000009_Node000011" title=" " alt="" coords="370,51,378,115,373,116,365,52"/>
+<area shape="poly" id="edge18_Node000013_Node000011" title=" " alt="" coords="322,45,260,72,171,118,168,113,258,67,320,41"/>
+<area shape="poly" id="edge12_Node000007_Node000012" title=" " alt="" coords="569,158,524,183,473,204,400,221,326,232,201,240,201,234,326,227,399,216,471,199,522,178,566,153"/>
+<area shape="poly" id="edge14_Node000007_Node000013" title=" " alt="" coords="152,154,152,225,147,225,147,154"/>
+<area shape="rect" id="Node000014" title=" " alt="" coords="104,5,243,45"/>
+<area shape="poly" id="edge17_Node000013_Node000014" title=" " alt="" coords="163,59,160,70,153,116,148,115,155,69,158,58"/>
+<area shape="rect" id="Node000015" href="$classOsmiaForageMask.html" title="Pre&#45;calculated spatial search mask for efficient resource location." alt="" coords="239,599,382,624"/>
+<area shape="poly" id="edge25_Node000001_Node000015" title=" " alt="" coords="293,636,244,688,240,684,289,632"/>
+<area shape="rect" id="Node000016" href="$classOsmiaForageMaskDetailed.html" title="High&#45;resolution spatial search mask for detailed resource assessment." alt="" coords="406,599,605,624"/>
+<area shape="poly" id="edge26_Node000001_Node000016" title=" " alt="" coords="470,632,385,665,291,689,290,684,383,660,468,627"/>
+</map>

@@ -1,0 +1,7 @@
+<map id="Osmia_Nest_Manager::IsOsmiaNestPossible" name="Osmia_Nest_Manager::IsOsmiaNestPossible">
+<area shape="rect" id="Node000001" title="Check if nest creation is possible in specified polygon." alt="" coords="517,5,684,45"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Population__Manager.html#a64e4f851baf4664844d2410f54481db3" title="Check if polygon suitable for Osmia nesting." alt="" coords="265,5,469,45"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="503,28,470,28,470,23,503,23"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Population__Manager.html#a047e019acba763f6ddf700c778d74b26" title="Constructor initializing population manager." alt="" coords="5,5,217,45"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="252,28,218,28,218,23,252,23"/>
+</map>

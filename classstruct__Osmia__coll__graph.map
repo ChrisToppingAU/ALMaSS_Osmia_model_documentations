@@ -1,0 +1,17 @@
+<map id="struct_Osmia" name="struct_Osmia">
+<area shape="rect" id="Node000001" title="Initialization data package for creating new Osmia agents." alt="" coords="245,196,353,221"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Population__Manager.html" title="Central coordinator for Osmia bicornis population simulation." alt="" coords="25,108,229,133"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,137,276,193,274,198,161,142"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,13,160,38"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="91,50,104,83,119,106,115,109,99,85,86,52"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Nest__Manager.html" title="Manages polygon&#45;level nest availability and nest object lifecycle." alt="" coords="215,13,380,38"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="202,43,157,55,140,63,130,71,124,89,126,107,121,108,119,88,126,68,138,58,155,50,200,38"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Nest.html" title="Container representing a linear nest structure with sequentially provisioned cells." alt="" coords="421,108,523,133"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="319,46,339,65,363,82,392,95,422,105,420,110,390,100,360,86,336,69,315,50"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="438,142,323,198,321,193,435,137"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="435,13,509,38"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="467,52,468,108,463,108,461,52"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="483,52,481,108,476,108,477,52"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="533,5,672,45"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="567,56,490,110,487,106,564,51"/>
+</map>

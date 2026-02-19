@@ -1,0 +1,15 @@
+<map id="Osmia_Larva::Osmia_Larva" name="Osmia_Larva::Osmia_Larva">
+<area shape="rect" id="Node000001" title="Constructor for new larva (created during egg hatching)" alt="" coords="5,47,163,87"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Larva.html#a6c439f6701801ae5b7ea7a591744cf42" title="Reinitialize larva object from object pool." alt="" coords="211,55,364,80"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="163,65,197,65,197,70,163,70"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Egg.html#a0702a62160efbb845a5a3baaaa9939ec" title="Reinitialize egg object from object pool." alt="" coords="412,55,553,80"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="364,65,398,65,398,70,364,70"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Base.html#a1c434e589e5e6c52b6bf553168be1f8e" title="Reinitialize object from object pool." alt="" coords="601,55,751,80"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="553,65,588,65,588,70,553,70"/>
+<area shape="rect" id="Node000005" href="$classOsmia__Base.html#ab805efa2ecde9c8a216beb3cb9ff3210" title="Set individual&#39;s age in days." alt="" coords="821,5,979,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="734,52,828,31,829,36,735,57"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Base.html#af53bc60e887dc515f85388f91eae324f" title="Set individual&#39;s mass (mg)" alt="" coords="817,55,983,80"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="751,65,803,65,803,70,751,70"/>
+<area shape="rect" id="Node000007" href="$classOsmia__Base.html#a36da7070a00889ab678dc903ba71a704" title="Set parasitism status." alt="" coords="799,104,1001,129"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="735,77,829,98,828,104,734,83"/>
+</map>

@@ -1,0 +1,24 @@
+<map id="Osmia_Prepupa" name="Osmia_Prepupa">
+<area shape="rect" id="Node000001" title="Prepupal diapause stage in cocoon." alt="" coords="9,299,133,324"/>
+<area shape="rect" id="Node000006" href="$classOsmia__Pupa.html" title="Pupal metamorphosis stage." alt="" coords="19,372,122,397"/>
+<area shape="poly" id="edge9_Node000001_Node000006" title=" " alt="" coords="65,338,66,372,61,372,59,338"/>
+<area shape="poly" id="edge14_Node000001_Node000006" title=" " alt="" coords="82,338,80,372,75,372,77,338"/>
+<area shape="rect" id="Node000002" href="$classOsmia__Larva.html" title="Feeding larval stage consuming provision mass." alt="" coords="17,225,124,251"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="65,264,66,298,61,299,59,265"/>
+<area shape="poly" id="edge8_Node000001_Node000002" title=" " alt="" coords="82,265,80,299,75,298,77,264"/>
+<area shape="rect" id="Node000003" href="$classOsmia__Egg.html" title="First life stage &#45; egg developing within sealed nest cell." alt="" coords="23,152,118,177"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,191,66,225,61,225,59,191"/>
+<area shape="poly" id="edge7_Node000002_Node000003" title=" " alt="" coords="82,191,80,225,75,225,77,191"/>
+<area shape="rect" id="Node000004" href="$classOsmia__Base.html" title="Foundation class for all Osmia bicornis life stages." alt="" coords="19,79,122,104"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="65,118,66,152,61,152,59,118"/>
+<area shape="poly" id="edge6_Node000003_Node000004" title=" " alt="" coords="82,118,80,152,75,152,77,118"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="33,5,108,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="65,44,66,78,61,79,59,45"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="82,45,80,79,75,78,77,44"/>
+<area shape="rect" id="Node000007" href="$classOsmia__InCocoon.html" title="Overwintering adult stage within cocoon." alt="" coords="5,445,136,471"/>
+<area shape="poly" id="edge10_Node000006_Node000007" title=" " alt="" coords="65,411,66,445,61,445,59,411"/>
+<area shape="poly" id="edge13_Node000006_Node000007" title=" " alt="" coords="82,411,80,445,75,445,77,411"/>
+<area shape="rect" id="Node000008" href="$classOsmia__Female.html" title="Active adult female conducting reproduction." alt="" coords="11,519,130,544"/>
+<area shape="poly" id="edge11_Node000007_Node000008" title=" " alt="" coords="65,484,66,518,61,519,59,485"/>
+<area shape="poly" id="edge12_Node000007_Node000008" title=" " alt="" coords="82,485,80,519,75,518,77,484"/>
+</map>
