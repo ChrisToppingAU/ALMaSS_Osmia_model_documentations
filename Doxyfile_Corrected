@@ -1,0 +1,42 @@
+# Doxyfile for Osmia bicornis MIDox Documentation
+# This configuration ensures markdown files are properly processed with @ref links
+
+PROJECT_NAME           = "Osmia bicornis Population Model"
+PROJECT_BRIEF          = "Agent-based bee model within ALMaSS framework"
+OUTPUT_DIRECTORY       = ./docs
+
+# CRITICAL: Include both source files AND markdown narrative
+INPUT                  = ./src \
+                         ./docs/Osmia_MIDox_Complete.md
+
+# CRITICAL: Include *.md pattern to process markdown files
+FILE_PATTERNS          = *.cpp *.h *.md
+
+RECURSIVE              = YES
+
+# CRITICAL: Makes the MIDox markdown the main documentation page
+USE_MDFILE_AS_MAINPAGE = ./docs/Osmia_MIDox_Complete.md
+
+GENERATE_HTML          = YES
+GENERATE_LATEX         = NO
+HTML_OUTPUT            = html
+
+EXTRACT_ALL            = YES
+EXTRACT_PRIVATE        = NO
+EXTRACT_STATIC         = YES
+
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = NO
+
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION    = YES
+
+# CRITICAL: Ensure markdown and autolink support are enabled
+MARKDOWN_SUPPORT       = YES
+AUTOLINK_SUPPORT       = YES
+
+# For diagrams
+HAVE_DOT               = YES
+CLASS_DIAGRAMS         = YES
+CALL_GRAPH             = YES
+CALLER_GRAPH           = YES

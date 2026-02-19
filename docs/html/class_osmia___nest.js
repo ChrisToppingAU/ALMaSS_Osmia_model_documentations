@@ -1,0 +1,25 @@
+var class_osmia___nest =
+[
+    [ "Osmia_Nest", "class_osmia___nest.html#a09d652c5dbc7e940afef1f09d9fbf3b3", null ],
+    [ "~Osmia_Nest", "class_osmia___nest.html#a904f94240b3b3d8336ce85282af3ecf5", null ],
+    [ "AddCocoon", "class_osmia___nest.html#a59266fbb87366b787b7310f5f8f04caf", null ],
+    [ "AddEgg", "class_osmia___nest.html#a294f453219f20b56c834d2c3f9305aaa", null ],
+    [ "GetAspectDelay", "class_osmia___nest.html#ace9d180f5ef3278300de8eac3162b988", null ],
+    [ "GetCellCount", "class_osmia___nest.html#aa530a1435ae2ad1e0319bd22f0098f96", null ],
+    [ "GetPolyRef", "class_osmia___nest.html#aca8d2d06e0518a37c49dbf82bd2b0a01", null ],
+    [ "GetX", "class_osmia___nest.html#a7cc950189fff3d91fbf0c31f296ddabd", null ],
+    [ "GetY", "class_osmia___nest.html#a205e483e0d7760154c7d9d5306c2002c", null ],
+    [ "IsOpen", "class_osmia___nest.html#a77fc93224e51fbf711ee845ced8d0941", null ],
+    [ "ReleaseCellLock", "class_osmia___nest.html#ad15e787d90a6e352ba9d0dc4c039a39c", null ],
+    [ "ReplaceNestPointer", "class_osmia___nest.html#ab4876925ec339f77c7e844cb2539cadf", null ],
+    [ "SetCellLock", "class_osmia___nest.html#a5f95143048ac04a8c086484a78294e07", null ],
+    [ "SetIsOpen", "class_osmia___nest.html#a9cd36073b87887094fd7750c9b7b81ef", null ],
+    [ "m_aspectdelay", "class_osmia___nest.html#a945da75650d71529551cfe28b84097ba", null ],
+    [ "m_cell_lock", "class_osmia___nest.html#aee73a5ff60264b6eed5323a8fe0a9172", null ],
+    [ "m_cells", "class_osmia___nest.html#a4857a5d0be4dadaf2064b7a26fec462d", null ],
+    [ "m_isOpen", "class_osmia___nest.html#ad84e60c0eb9b7d40a94bb1b6ac6b8210", null ],
+    [ "m_OurManager", "class_osmia___nest.html#a91002a5ca2ddeb592417644d6409cf05", null ],
+    [ "m_PolyRef", "class_osmia___nest.html#ab7c3c4c958e5ec6293c905fa1eb7d7f2", null ],
+    [ "m_x", "class_osmia___nest.html#a649ba5071a10fd0f49dab0ff1405157b", null ],
+    [ "m_y", "class_osmia___nest.html#a55982bfe6847d1bbd3cf22a033000595", null ]
+];

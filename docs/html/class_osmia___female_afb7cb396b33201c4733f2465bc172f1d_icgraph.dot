@@ -1,0 +1,11 @@
+digraph "Osmia_Female::PlanEggsPerNest"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Osmia_Female::PlanEggsPerNest",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Calculate planned eggs for next nest."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Osmia_Female::CalculateEggLoad",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___female.html#a57d49547e2a2fd54ae90caacad2df17a",tooltip="Calculate total lifetime egg load from body mass."];
+}

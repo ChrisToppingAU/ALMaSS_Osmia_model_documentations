@@ -1669,16 +1669,16 @@ Stillman RA, Railsback SF, Giske J, Berger U, Grimm V (2015). Making predictions
 
 | Class | Purpose | Key Methods |
 |-------|---------|-------------|
-| [Osmia_Base](@ref Osmia_Base) | Common attributes/methods for all life stages | [GetTemp()](@ref GetTemp()), [SetTemp()](@ref SetTemp()), [CheckMortality()](@ref CheckMortality()) |
-| [Osmia_Egg](@ref Osmia_Egg) | Egg development and hatching | [Step()](@ref Step()), [TransitionToLarva()](@ref TransitionToLarva()) |
-| [Osmia_Larva](@ref Osmia_Larva) | Larval feeding and cocoon construction | [Step()](@ref Step()), [TransitionToPrepupa()](@ref TransitionToPrepupa()) |
-| [Osmia_Prepupa](@ref Osmia_Prepupa) | Summer diapause | [Step()](@ref Step()), [TransitionToPupa()](@ref TransitionToPupa()) |
-| [Osmia_Pupa](@ref Osmia_Pupa) | Metamorphosis to adult | [Step()](@ref Step()), [TransitionToInCocoon()](@ref TransitionToInCocoon()) |
-| [Osmia_InCocoon](@ref Osmia_InCocoon) | Overwintering adult in cocoon | [Step()](@ref Step()), [Emerge()](@ref Emerge()) |
-| [Osmia_Female](@ref Osmia_Female) | Reproductive behaviour | [Step()](@ref Step()), [FindNest()](@ref FindNest()), [Forage()](@ref Forage()), [LayEgg()](@ref LayEgg()) |
-| [Osmia_Population_Manager](@ref Osmia_Population_Manager) | Simulation orchestration | [Init()](@ref Init()), [DoFirst()](@ref DoFirst()), [CreateObjects()](@ref CreateObjects()) |
-| [Osmia_Nest_Manager](@ref Osmia_Nest_Manager) | Nest availability tracking | [UpdateOsmiaNesting()](@ref UpdateOsmiaNesting()), [IsNestPossible()](@ref IsNestPossible()) |
-| [Osmia_Nest](@ref Osmia_Nest) | Individual nest structure | [AddEgg()](@ref AddEgg()), [AddCocoon()](@ref AddCocoon()), [CloseNest()](@ref CloseNest()) |
+| [Osmia_Base](@ref Osmia_Base) | Common attributes/methods for all life stages | [GetTemp()](@ref Osmia_Base::GetTemp()), [SetTemp()](@ref Osmia_Base::SetTemp()), [CheckMortality()](@ref Osmia_Base::CheckMortality()) |
+| [Osmia_Egg](@ref Osmia_Egg) | Egg development and hatching | [Step()](@ref Osmia_Egg::Step()), [TransitionToLarva()](@ref Osmia_Egg::TransitionToLarva()) |
+| [Osmia_Larva](@ref Osmia_Larva) | Larval feeding and cocoon construction | [Step()](@ref Osmia_Larva::Step()), [TransitionToPrepupa()](@ref Osmia_Larva::TransitionToPrepupa()) |
+| [Osmia_Prepupa](@ref Osmia_Prepupa) | Summer diapause | [Step()](@ref Osmia_Prepupa::Step()), [TransitionToPupa()](@ref Osmia_Prepupa::TransitionToPupa()) |
+| [Osmia_Pupa](@ref Osmia_Pupa) | Metamorphosis to adult | [Step()](@ref Osmia_Pupa::Step()), [TransitionToInCocoon()](@ref Osmia_Pupa::TransitionToInCocoon()) |
+| [Osmia_InCocoon](@ref Osmia_InCocoon) | Overwintering adult in cocoon | [Step()](@ref Osmia_InCocoon::Step()), [Emerge()](@ref Osmia_InCocoon::Emerge()) |
+| [Osmia_Female](@ref Osmia_Female) | Reproductive behaviour | [Step()](@ref Osmia_Female::Step()), [FindNest()](@ref Osmia_Female::FindNest()), [Forage()](@ref Osmia_Female::Forage()), [LayEgg()](@ref Osmia_Female::LayEgg()) |
+| [Osmia_Population_Manager](@ref Osmia_Population_Manager) | Simulation orchestration | [Init()](@ref Osmia_Population_Manager::Init()), [DoFirst()](@ref Osmia_Population_Manager::DoFirst()), [CreateObjects()](@ref Osmia_Population_Manager::CreateObjects()) |
+| [Osmia_Nest_Manager](@ref Osmia_Nest_Manager) | Nest availability tracking | [UpdateOsmiaNesting()](@ref Osmia_Nest_Manager::UpdateOsmiaNesting()), [IsNestPossible()](@ref Osmia_Nest_Manager::IsNestPossible()) |
+| [Osmia_Nest](@ref Osmia_Nest) | Individual nest structure | [AddEgg()](@ref Osmia_Nest::AddEgg()), [AddCocoon()](@ref Osmia_Nest::AddCocoon()), [CloseNest()](@ref Osmia_Nest::CloseNest()) |
 
 ### Configuration File Structure
 

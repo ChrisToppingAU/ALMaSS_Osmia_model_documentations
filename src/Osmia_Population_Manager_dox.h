@@ -864,6 +864,252 @@ public:
 };
 
 //==============================================================================
+// NEST MANAGEMENT CLASS
+//==============================================================================
+
+/**
+ * @class Osmia_Nest_Manager
+ * @brief Manages polygon-level nest availability and nest object lifecycle
+ *
+ * @details The Osmia_Nest_Manager maintains nesting infrastructure across the landscape,
+ * tracking which polygons can support nests and managing nest creation/destruction.
+ * This class provides the spatial framework for nest-based reproduction in the model.
+ *
+ * @par Core Responsibilities
+ * - **Initialization:** Reading nest density files and setting up polygon-level nest capacity
+ * - **Availability checking:** Determining if nests can be created in specific polygons
+ * - **Nest creation:** Instantiating Osmia_Nest objects when females find suitable sites
+ * - **Nest destruction:** Removing nests when empty, abandoned, or at simulation end
+ * - **Thread safety:** Managing polygon-level locks for parallel execution
+ *
+ * @par Relationship to Other Classes
+ * - Used by Osmia_Population_Manager to coordinate nest management
+ * - Creates and tracks Osmia_Nest objects
+ * - Interfaces with landscape polygons (OsmiaPolygonEntry) for capacity tracking
+ * - Enables females (Osmia_Female) to find and provision nests
+ *
+ * @par Design Philosophy
+ * Nest management is separated from individual bee behaviour to enable:
+ * - Centralized capacity tracking (prevent over-nesting in polygons)
+ * - Efficient spatial indexing (quick nest availability queries)
+ * - Thread-safe operations (polygon-level locking)
+ * - Nest persistence across individual lifespans (nests outlive provisioning females)
+ *
+ * @par Implementation Notes
+ * The manager maintains a polygon list (m_PolyList) where each entry (OsmiaPolygonEntry)
+ * tracks nest capacity and current nest count for that polygon. Thread safety is critical
+ * because multiple females may simultaneously query or modify nest data in parallel
+ * execution mode.
+ *
+ * @par Biological Context
+ * *Osmia bicornis* nests in pre-existing cavities (hollow stems, beetle holes, artificial
+ * nest boxes). Nest availability can limit population growth even when food is abundant.
+ * This manager implements realistic spatial constraints on nesting, enabling the model
+ * to explore how nesting habitat affects population dynamics.
+ *
+ * @see OsmiaPolygonEntry for polygon-level nest tracking
+ * @see Osmia_Nest for individual nest structure
+ * @see Osmia_Population_Manager for usage
+ * @see Osmia_Female for nest-finding behaviour
+ */
+class Osmia_Nest_Manager
+{
+public:
+	/**
+	 * @brief Constructor initializing nest manager
+	 * @details Sets up empty polygon list and lock structures. Actual nest capacity
+	 * data loaded during InitOsmiaBeeNesting() call from population manager.
+	 */
+	Osmia_Nest_Manager()
+	{
+		;
+	}
+
+	/**
+	 * @brief Destructor cleaning up nest manager resources
+	 * @details Releases all polygon locks and clears polygon list. Called at simulation
+	 * end. Individual nests should already be destroyed by this point.
+	 */
+	~Osmia_Nest_Manager()
+	{
+		int nopolys = m_PolyList.size();
+		for (int e = 0; e < nopolys; e++) {
+			omp_destroy_nest_lock(m_PolyListLocks[e]);
+			delete m_PolyListLocks[e];
+		}
+		m_PolyList.clear();
+	}
+
+	/**
+	 * @brief Initialize nest capacity data from configuration files
+	 * @details Reads polygon-level nest density files and allocates capacity to each
+	 * landscape element. Sets up m_PolyList and m_PolyListLocks structures.
+	 * Called during Osmia_Population_Manager::Init().
+	 *
+	 * @par File Format
+	 * Configuration file specifies nest capacity per polygon based on habitat type
+	 * and management. Typical values range from 0 (unsuitable) to 100s (nest boxes).
+	 */
+	void InitOsmiaBeeNesting();
+
+	/**
+	 * @brief Update nest availability status across all polygons
+	 * @details Loops through all landscape elements and updates their Osmia nesting
+	 * status based on current conditions (e.g., recent mowing makes grassland unsuitable).
+	 * Called periodically during simulation to reflect dynamic habitat changes.
+	 *
+	 * @par Implementation
+	 * Delegates to OsmiaPolygonEntry::UpdateOsmiaNesting() for each polygon.
+	 */
+	void UpdateOsmiaNesting() {
+		for (unsigned int s = 0; s < m_PolyList.size(); s++) {
+			m_PolyList[s].UpdateOsmiaNesting();
+		}
+	}
+
+	/**
+	 * @brief Check if nest creation is possible in specified polygon
+	 * @param a_polyindex Polygon index to query
+	 * @return true if polygon can support additional nests, false otherwise
+	 *
+	 * @details Queries polygon's nest availability based on:
+	 * - Habitat type (some types never suitable)
+	 * - Current nest count vs. maximum capacity
+	 * - Management state (e.g., recently mown grassland unsuitable)
+	 *
+	 * Used by Osmia_Female during nest-searching to identify suitable locations.
+	 *
+	 * @see OsmiaPolygonEntry::IsOsmiaNestPossible()
+	 */
+	bool IsOsmiaNestPossible(int a_polyindex)
+	{
+		return m_PolyList[a_polyindex].IsOsmiaNestPossible();
+	}
+
+	/**
+	 * @brief Create new nest at specified location
+	 * @param a_x Landscape X-coordinate (meters)
+	 * @param a_y Landscape Y-coordinate (meters)
+	 * @param a_polyindex Polygon containing nest
+	 * @return Pointer to newly created Osmia_Nest object
+	 *
+	 * @details Creates Osmia_Nest object and increments polygon's nest count.
+	 * Called by Osmia_Female when suitable cavity found during nest-finding.
+	 *
+	 * @par Thread Safety
+	 * Caller (Osmia_Population_Manager::CreateNest) manages polygon lock.
+	 *
+	 * @see Osmia_Population_Manager::CreateNest() for thread-safe wrapper
+	 */
+	Osmia_Nest* CreateNest(int a_x, int a_y, int a_polyindex)
+	{
+		Osmia_Nest* a_nest = new Osmia_Nest(a_x, a_y, a_polyindex, this);
+		m_PolyList[a_polyindex].IncOsmiaNesting(a_nest);
+		return a_nest;
+	}
+
+	/**
+	 * @brief Release (destroy) nest from polygon
+	 * @param a_polyindex Polygon containing nest
+	 * @param a_nest Pointer to nest being released
+	 *
+	 * @details Thread-safe nest destruction:
+	 * 1. Acquire polygon lock (done by caller)
+	 * 2. Remove nest from polygon's nest list
+	 * 3. Decrement polygon nest counter
+	 * 4. Delete nest object or return to pool
+	 * 5. Release polygon lock (done by caller)
+	 *
+	 * @par When Called
+	 * - Female abandons nest before completing provisioning
+	 * - All offspring emerged or died (nest now empty)
+	 * - Female dies whilst actively provisioning
+	 *
+	 * @par Thread Safety
+	 * This method acquires polygon-specific lock to prevent concurrent modification.
+	 * Critical for parallel execution when multiple females operate simultaneously.
+	 *
+	 * @see Osmia_Population_Manager::ReleaseOsmiaNest() for usage
+	 */
+	void ReleaseOsmiaNest(int a_polyindex, Osmia_Nest* a_nest)
+	{
+		omp_set_nest_lock(m_PolyListLocks[a_polyindex]);
+		m_PolyList[a_polyindex].ReleaseOsmiaNest(a_nest);
+		omp_unset_nest_lock(m_PolyListLocks[a_polyindex]);
+	}
+
+	/**
+	 * @brief Query if nesting is possible in specific landscape element type
+	 * @param index Landscape element type
+	 * @return true if nest creation possible in this habitat type, false otherwise
+	 *
+	 * @details Provides type-level nesting suitability (independent of specific polygon).
+	 * Used for broad habitat classification queries.
+	 */
+	bool GetNestPossible(TTypesOfLandscapeElement index) { return m_PossibleNestType[int(index)]; }
+
+	/**
+	 * @brief Get current number of nests in polygon
+	 * @param a_polyindex Polygon index to query
+	 * @return Current nest count
+	 *
+	 * @details Used for monitoring, diagnostics, and density-dependent processes.
+	 */
+	int GetNoNests(int a_polyindex) {
+		return m_PolyList[a_polyindex].GetNoNests();
+	}
+
+	/**
+	 * @brief Sanity check for polygon nest count
+	 * @param a_polyindex Polygon to check
+	 * @return true if nest count is consistent, false if error detected
+	 *
+	 * @details Validates that polygon's nest count matches actual nest list length.
+	 * Used for debugging and error detection during development.
+	 */
+	bool SanityCheck(int a_polyindex) {
+		return m_PolyList[a_polyindex].SanityCheck();
+	}
+
+	/**
+	 * @brief Check all polygons have zero nests
+	 * @return true if all polygons have zero nests, false otherwise
+	 *
+	 * @details Used at simulation end to verify proper cleanup. All nests should
+	 * be destroyed before manager destruction.
+	 */
+	bool CheckZeroNests() {
+		for (unsigned int s = 0; s < m_PolyList.size(); s++) {
+			if (!m_PolyList[s].SanityCheck2()) return false;
+		}
+		return true;
+	}
+
+protected:
+	/**
+	 * @brief List of polygon entries tracking nest availability
+	 * @details One entry per landscape polygon, stores nest capacity and current count.
+	 * Indexed by polygon index for O(1) lookup during nest queries.
+	 */
+	vector<OsmiaPolygonEntry> m_PolyList;
+
+	/**
+	 * @brief Polygon-level locks for thread safety
+	 * @details OpenMP nest locks enabling concurrent nest operations across different
+	 * polygons whilst preventing race conditions within single polygon.
+	 */
+	vector<omp_nest_lock_t*> m_PolyListLocks;
+
+	/**
+	 * @brief Habitat type suitability flags
+	 * @details Array indexed by TTypesOfLandscapeElement, true if nests possible
+	 * in that habitat type, false otherwise. Set during initialization based on
+	 * configuration files.
+	 */
+	bool m_PossibleNestType[tole_Foobar];
+};
+
+//==============================================================================
 // MAIN POPULATION MANAGER CLASS
 //==============================================================================
 

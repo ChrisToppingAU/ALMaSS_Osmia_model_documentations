@@ -1,0 +1,39 @@
+digraph "Osmia_Base::SetAge"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="Osmia_Base::SetAge",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Set individual's age in days."];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Osmia_Base::Osmia_Base",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___base.html#aae257f8abfc3edb0ac1196faa598dbcf",tooltip="Constructor creating new Osmia_Base individual."];
+  Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="Osmia_Egg::Osmia_Egg",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___egg.html#a46c7794f3550b76a63cbe5c6bdc5f1f2",tooltip="Constructor for new egg object."];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="Osmia_Larva::Osmia\l_Larva",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___larva.html#ad3bef3ed9fad155f1c5e0966ee132cf7",tooltip="Constructor for new larva (created during egg hatching)."];
+  Node4 -> Node5 [id="edge4_Node000004_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="Osmia_Prepupa::Osmia\l_Prepupa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___prepupa.html#a76f75dba719863e12d956a25e1f37e1c",tooltip="Constructor transferring from larva to prepupa."];
+  Node5 -> Node6 [id="edge5_Node000005_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="Osmia_Pupa::Osmia_Pupa",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___pupa.html#a97279db6c8335438d1dff2e516602cbf",tooltip="Constructor transferring from prepupa."];
+  Node6 -> Node7 [id="edge6_Node000006_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="Osmia_InCocoon::Osmia\l_InCocoon",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___in_cocoon.html#adfcfa1f4f00c912840b61570a8aa3812",tooltip="Constructor for newly eclosed adult in cocoon."];
+  Node1 -> Node8 [id="edge7_Node000001_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="Osmia_Base::ReInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___base.html#a1c434e589e5e6c52b6bf553168be1f8e",tooltip="Reinitialize object from object pool."];
+  Node8 -> Node2 [id="edge8_Node000008_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 -> Node9 [id="edge9_Node000008_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="Osmia_Egg::ReInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___egg.html#a0702a62160efbb845a5a3baaaa9939ec",tooltip="Reinitialize egg object from object pool."];
+  Node9 -> Node3 [id="edge10_Node000009_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 -> Node10 [id="edge11_Node000009_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="Osmia_Larva::ReInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___larva.html#a6c439f6701801ae5b7ea7a591744cf42",tooltip="Reinitialize larva object from object pool."];
+  Node10 -> Node4 [id="edge12_Node000010_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 -> Node11 [id="edge13_Node000010_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="Osmia_Prepupa::ReInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___prepupa.html#a4a83e8226eb56046515b9a293fb17088",tooltip="Reinitialize prepupa from object pool."];
+  Node11 -> Node5 [id="edge14_Node000011_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 -> Node12 [id="edge15_Node000011_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="Osmia_Pupa::ReInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___pupa.html#a6a8e9a88edb6b69402c015a8aab66ed8",tooltip="Reinitialize pupa from object pool."];
+  Node12 -> Node6 [id="edge16_Node000012_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 -> Node13 [id="edge17_Node000012_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="Osmia_InCocoon::ReInit",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___in_cocoon.html#affe3ed7a1b2bb44323d325353350bd42",tooltip="Reinitialize object from pool."];
+  Node13 -> Node7 [id="edge18_Node000013_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+}

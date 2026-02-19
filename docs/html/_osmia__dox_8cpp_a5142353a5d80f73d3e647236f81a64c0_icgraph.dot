@@ -1,0 +1,11 @@
+digraph "cfg_OsmiaInCocoonEmergCountConst"
+{
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="RL";
+  Node1 [id="Node000001",label="cfg_OsmiaInCocoonEmergCount\lConst",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node2 [id="Node000002",label="Osmia_Base::SetParameter\lValues",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$class_osmia___base.html#ab625ca023fbb4cb430b41187c19a9378",tooltip="Populate all static parameters from configuration file."];
+}
